@@ -1,4 +1,5 @@
 /* --- BASE MOBILE STYLES (Default) --- */
+
 body {
     background-image: url("../asset/img/img1.jpg");
     background-size: cover;
@@ -20,7 +21,7 @@ header {
 }
 
 .logo img {
-    margin-left: 0; 
+    margin-left: 100; 
     width: 50px;
 }
 
@@ -71,7 +72,7 @@ input[type="search"] {
 }
 
 .btns .agent, .btns .loc {
-    margin-left: 0;
+    margin-left: 100px;
     width: 80%; /* Wider buttons for easy tapping */
 }
 
@@ -105,4 +106,5 @@ input[type="search"] {
         margin: 0;
     }
 }
+
 
