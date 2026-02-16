@@ -1,104 +1,108 @@
-body
-{
-	background-image: url("../asset/img/img1.jpg");
-	background-size: cover;
+/* --- BASE MOBILE STYLES (Default) --- */
+body {
+    background-image: url("../asset/img/img1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-header
-{
-	display: flex;
-	align-items: center;
-	padding: 10px 20px;	
+header {
+    display: flex;
+    flex-direction: column; /* Stack logo and nav on mobile */
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
 }
 
-nav.header a
-{
-	margin-left: 20px;
-	text-decoration: none;
-	color: white;
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.logo img 
-{
-	margin-left: 250px;
-	width: 50px;
-	height: auto;
+/* Remove the huge 250px margin for mobile */
+.logo img {
+    margin-left: 0; 
+    width: 50px;
 }
 
-.logo 
-{
-	display: flex;
-	gap: 10px;
-	align-items: center;
+.logo a {
+    margin-right: 0;
+    color: white;
+    text-decoration: none;
 }
 
-.logo a
-{
-	text-decoration: none;
-	color: white;	
-	margin-right: 50px;
+nav.header {
+    display: flex;
+    gap: 15px;
 }
 
-section
-{
-	color: white;
-	margin-left: 260px;
-	margin-top: 150px;
+nav.header a {
+    margin-left: 0;
+    color: white;
+    text-decoration: none;
 }
 
-.btns .agent
-{
-	color: white;
-	border: none;
-	cursor: pointer;
-	margin-right: 10px;	
-	margin-left: 300px;
-	background: none;
-	background-color: black;
-	padding: 12px 24px;
-	border-radius: 8px;
-	font-size: 16px;
-	font-weight: 600;
-	transition: all 0.3s ease;
-}
-.btns .loc
-{
-	background-color: white;
-	color: black;
-	padding: 12px 24px;
-	border-radius: 8px;
-	font-size: 16px;
-	font-weight: 600;
-	transition: all 0.3s ease;
-	border: none;
-	cursor: pointer;
+section {
+    color: white;
+    margin: 50px 20px; /* Center content with smaller margins */
+    text-align: center;
 }
 
-.btns buttons:hover
-{
-	opacity: 0.8;
-	transform: translate(-2px);
-}
-
+/* Form responsiveness */
 #search-form {
-	display: flex;       /* Put input and button side-by-side */
-	max-width: 400px;
-	gap: 10px;           /* Space between them */
+    display: flex;
+    flex-direction: column; /* Stack input and button */
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 10px;
 }
 
 input[type="search"] {
-	flex-grow: 1;        /* Makes input fill available space */
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	margin-left: 200px;
+    margin-left: 0; /* Remove fixed margin */
+    width: 100%;
 }
 
-button {
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	cursor: pointer;
+/* Button responsiveness */
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
+.btns .agent, .btns .loc {
+    margin-left: 0;
+    width: 80%; /* Wider buttons for easy tapping */
+}
+
+/* --- TABLET & DESKTOP (Screens wider than 768px) --- */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Side-by-side layout */
+        justify-content: space-between;
+    }
+
+    .logo img {
+        margin-left: 20px;
+    }
+
+    section {
+        margin-left: 100px;
+        text-align: left;
+    }
+
+    .btns {
+        flex-direction: row;
+    }
+
+    .btns .agent {
+        margin-left: 0;
+    }
+
+    #search-form {
+        flex-direction: row;
+        max-width: 400px;
+        margin: 0;
+    }
+}
