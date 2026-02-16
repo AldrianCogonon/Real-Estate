@@ -19,7 +19,6 @@ header {
     align-items: center;
 }
 
-/* Remove the huge 250px margin for mobile */
 .logo img {
     margin-left: 0; 
     width: 50px;
@@ -59,7 +58,7 @@ section {
 }
 
 input[type="search"] {
-    margin-left: 0; /* Remove fixed margin */
+    margin-left: 0; 
     width: 100%;
 }
 
@@ -106,3 +105,4 @@ input[type="search"] {
         margin: 0;
     }
 }
+
