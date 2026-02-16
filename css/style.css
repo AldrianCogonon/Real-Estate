@@ -5,7 +5,8 @@
         padding: 10px;
     }
     .logo img {
-        margin-left: 0; /* Remove desktop margin */
+        margin-left: 100px; 
+        width: 20px; height: auto;
     }
     .logo a {
         margin-right: 0;
@@ -73,3 +74,4 @@
         margin-left: 200px;
     }
 }
+
