@@ -2,7 +2,7 @@
 body
 	{
 		background-image: url.("../asset/img/img1.jpg");
-		backgroound-size: cover;
+		background-size: cover;
 	}
 
 /* Mobile */
@@ -145,8 +145,9 @@ section
 
 #search-form {
 	display: flex;       /* Put input and button side-by-side */
-	max-width: 400px;
+	max-width: 300px;
 	gap: 10px;           /* Space between them */
+	width: 60%;
 }
 
 input[type="search"] {
@@ -155,6 +156,7 @@ input[type="search"] {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	margin-left: 200px;
+	width: 60%;
 }
 
 button {
@@ -164,4 +166,5 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
 
