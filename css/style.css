@@ -115,9 +115,7 @@ body
 		color: white;
 		border: none;
 		cursor: pointer;
-		margin-right: 10px;	
-		margin-left: 300px;
-		background: none;
+		margin-right: 10px;	margin-left: 300px;
 		background-color: black;
 		padding: 12px 24px;
 		border-radius: 8px;
@@ -171,6 +169,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
