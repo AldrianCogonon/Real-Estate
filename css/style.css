@@ -54,24 +54,106 @@
 
 /* Desktop */
 @media screen and (min-width: 1025px) {
-    header {
-        justify-content: flex-start;
-    }
-    .logo img {
-        margin-left: 250px;
-    }
-    .logo a {
-        margin-right: 50px;
-    }
-    section {
-        margin-left: 260px;
-        margin-top: 150px;
-    }
-    .btns .agent {
-        margin-left: 300px;
-    }
-    input[type="search"] {
-        margin-left: 200px;
-    }
+    body
+{
+	background-image: url("../asset/img/img1.jpg");
+	background-size: cover;
 }
 
+header
+{
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;	
+}
+
+nav.header a
+{
+	margin-left: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+.logo img 
+{
+	margin-left: 250px;
+	width: 50px;
+	height: auto;
+}
+
+.logo 
+{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.logo a
+{
+	text-decoration: none;
+	color: white;	
+	margin-right: 50px;
+}
+
+section
+{
+	color: white;
+	margin-left: 260px;
+	margin-top: 150px;
+}
+
+.btns .agent
+{
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;	
+	margin-left: 300px;
+	background: none;
+	background-color: black;
+	padding: 12px 24px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+.btns .loc
+{
+	background-color: white;
+	color: black;
+	padding: 12px 24px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+}
+
+.btns buttons:hover
+{
+	opacity: 0.8;
+	transform: translate(-2px);
+}
+
+#search-form {
+	display: flex;       /* Put input and button side-by-side */
+	max-width: 400px;
+	gap: 10px;           /* Space between them */
+}
+
+input[type="search"] {
+	flex-grow: 1;        /* Makes input fill available space */
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-left: 200px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
