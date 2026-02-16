@@ -1,6 +1,13 @@
+/* Global Declaration. Will affect everything below */
+body
+	{
+		background-image: url.("../asset/img/img1.jpg");
+		backgroound-size: cover;
+	}
+
 /* Mobile */
-@media screen and (max-width: 480px) {
-    header {
+@media screen and (max-width: 6000px) {
+	header {
         flex-direction: column;
         padding: 10px;
     }
@@ -157,3 +164,4 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
