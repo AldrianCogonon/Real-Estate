@@ -97,7 +97,10 @@ input[type="search"] {
     }
 
     .btns .agent {
-        margin-left: 0;
+        margin-left: 100; margin-right: 10px;
+        background-color: black;
+        padding: 12px 24px;
+        
     }
 
     #search-form {
@@ -106,6 +109,7 @@ input[type="search"] {
         margin: 0;
     }
 }
+
 
 
 
