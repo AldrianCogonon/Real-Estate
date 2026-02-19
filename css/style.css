@@ -13,7 +13,7 @@ body
 }
 
 /* Mobile */
-@media screen  and (min-width: 480px) and (max-width: 600px) 
+@media screen  and (max-width: 600px) 
 {
 	header {
         flex-direction: column;
@@ -48,7 +48,7 @@ body
 }
 
 /* Tablet */
-@media screen and (min-width: 481px) and (max-width: 1024px) 
+@media screen and (min-width: 601px) and (max-width: 1024px) 
 {
     header {
         justify-content: space-around;
@@ -68,151 +68,123 @@ body
     }
 }
 
-/* Desktop */
-@media screen and (min-width: 1025px) and (max-width: 1440px)
+/* Animations for Buttons */
+@keyframes entranceEffect
 {
-	header
+    from
 	{
-		display: flex;
-		align-items: center;
-		padding: 10px 20px;	
-		justify-content: space-between;
-	}
-
-	nav.header
+        opacity: 0;
+        transform: translateY(30px); /* Starts slightly lower */
+    }
+    to 
 	{
-		margin-left: auto;
-		margin-top: 0;
-	}
-	nav.header a
-	{
-		margin-left: 30px;
-		text-decoration: none;
-		color: white;
-		font-weight: 600;
-	}
-	
-	.logo img 
-	{
-		margin-left: 250px;
-		width: 50px;
-		height: auto;
-	}
-
-	.logo 
-	{
-		display: flex;
-		gap: 10px;
-		align-items: center;
-	}
-	
-	.logo a
-	{
-		text-decoration: none;
-		color: white;	
-		margin-right: 50px;
-	}
-	
-	section
-	{
-		color: white;
-		margin-left: 260px;
-		margin-top: 150px;
-	}
-	
-	.btns .agent
-	{
-		color: white;
-		border: none;
-		cursor: pointer;
-		margin-right: 10px;	margin-left: 300px;
-		background-color: black;
-		padding: 12px 24px;
-		border-radius: 8px;
-		font-size: 16px;
-		font-weight: 600;
-		transition: all 0.3s ease;
-	}
-	.btns .loc
-	{
-		background-color: white;
-		color: black;
-		padding: 12px 24px;
-		border-radius: 8px;
-		font-size: 16px;
-		font-weight: 600;
-		transition: all 0.3s ease;
-		border: none;
-		cursor: pointer;
-	}
-
-	.btns buttons:hover
-	{
-		opacity: 0.8;
-		transform: translate(-2px);
-	}
-	 
-	#search-form 
-	{
-		display: flex;       /* Put input and button side-by-side */
-		max-width: 300px;
-		gap: 10px;           /* Space between them */
-		width: 60%;
-	}
-	
-	input[type="search"] 
-	{
-		flex-grow: 1;        /* Makes input fill available space */
-		padding: 10px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		margin-left: 200px;
-		width: 60%;
-	}
-	
-	button
-	{
-		padding: 10px 20px;
-		background-color: #007bff;
-		color: white;
-		border: none;
-		cursor: pointer;
-	}
-
-	/* Animations for Buttons */
-	@keyframes entranceEffect
-	{
-    	from
-		{
-        	opacity: 0;
-        	transform: translateY(30px); /* Starts slightly lower */
-    	}
-    	to 
-		{
-        	opacity: 1;
-        	transform: translateY(0);    /* Ends at original position */
-    	}
-	}
-
-	/* 2. Apply the Animation to your buttons */
-	.btns .agent, .btns .loc
-	{
-    	/* Animation Name | Duration | Timing | Fill Mode */
-    	animation: entranceEffect 0.8s ease-out forwards;
-    	opacity: 0; /* Keeps them hidden until the animation starts */
-	}
-
-	/* 3. Stagger the second button (Optional: makes it appear 0.2s later) */
-	.btns .loc
-	{
-    	animation-delay: 0.2s;
-	}
-
+        opacity: 1;
+        transform: translateY(0);    /* Ends at original position */
+    }
 }
 
+/* Desktop */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    header {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;	
+        justify-content: space-between;
+    }
 
+    /* LOGO SECTION */
+    .logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .logo img {
+        margin-left: 250px; /* Your intentional spacing */
+        width: 50px;
+        height: auto;
+    }
+    .logo a {
+        text-decoration: none;
+        color: white;	
+        margin-right: 50px;
+    }
 
+    /* NAVIGATION SECTION */
+    nav.header {
+        margin-left: auto;
+        margin-right: 250px; /* Symmetric spacing to match logo */
+    }
+    nav.header a {
+        margin-left: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+    }
 
+    /* HERO SECTION */
+    section {
+        color: white;
+        margin-left: 260px;
+        margin-top: 150px;
+    }
 
+    /* BUTTONS BASE STYLES */
+    .btns .agent, .btns .loc {
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        /* Entrance Animation */
+        animation: entranceEffect 0.8s ease-out forwards;
+        opacity: 0; 
+    }
 
+    .btns .agent {
+        background-color: black;
+        color: white;
+        margin-left: 300px;
+        margin-right: 10px;
+    }
 
+    .btns .loc {
+        background-color: white;
+        color: black;
+        animation-delay: 0.2s; /* Staggered entrance */
+    }
+
+    /* HOVER EFFECTS (Cleaned & Combined) */
+    .btns .agent:hover, .btns .loc:hover {
+        opacity: 0.8;
+        transform: translateY(-3px); /* Lifts up */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* SEARCH FORM */
+    #search-form {
+        display: flex;
+        max-width: 300px;
+        gap: 10px;
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+
+    input[type="search"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 250px;
+    }
+
+    #search-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
