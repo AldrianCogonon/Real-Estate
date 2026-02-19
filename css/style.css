@@ -83,6 +83,7 @@ body
 		margin-left: 70%;
 		text-decoration: none;
 		color: white;
+		word-spacing: 20px;
 	}
 	
 	.logo img 
@@ -172,6 +173,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
