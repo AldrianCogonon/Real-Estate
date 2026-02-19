@@ -65,10 +65,9 @@ body {
         width: 50px;
     }
 
-    /* FIX: Removed the 70% margin that was breaking your nav */
     nav.header {
         display: flex;
-        gap: 30px; /* Consistent spacing between links */
+        gap: 30px; /* spacing between links */
     }
 
     nav.header a {
@@ -83,3 +82,4 @@ body {
         margin-top: 150px;
     }
 }
+
