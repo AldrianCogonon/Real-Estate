@@ -1,85 +1,175 @@
 /* Global Declaration. Will affect everything below */
-body {
+body 
+{
     background-image: url("../asset/img/img1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0; 
 }
 
 /* Mobile */
-@media screen and (max-width: 600px) {
-    header {
-        display: flex;
+@media screen  and (min-width: 480px) and (max-width: 600px) 
+{
+	header {
         flex-direction: column;
-        align-items: center;
         padding: 10px;
     }
     .logo img {
-        width: 30px; 
-        height: auto;
+        margin-left: 100px; 
+        width: 20px; height: auto;
+    }
+    .logo a {
+        margin-right: 0;
     }
     nav.header {
         margin-top: 15px;
-        display: flex;
-        gap: 15px; 
     }
     nav.header a {
+        margin-left: 10px;
         font-size: 14px;
-        text-decoration: none;
-        color: white;
+    }
+    section {
+        margin: 80px 20px 0 20px; /* Center text */
+        text-align: center;
+    }
+    .btns .agent, .btns .loc {
+        margin: 10px 0;
+        width: 100%; /* Stack buttons */
+    }
+    input[type="search"] {
+        margin-left: 0;
+        width: 100%;
     }
 }
-
 
 /* Tablet */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) 
+{
     header {
-        display: flex;
         justify-content: space-around;
-        align-items: center;
-        padding: 15px;
+    }
+    .logo img {
+        margin-left: 20px;
     }
     section {
-        margin: 100px 0 0 50px;
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+    .btns .agent {
+        margin-left: 50px;
+    }
+    input[type="search"] {
+        margin-left: 50px;
     }
 }
-
 
 /* Desktop */
-@media screen and (min-width: 1025px) {
-    header {
-        display: flex;
-        justify-content: space-between; /* Pushes Logo left, Nav right */
-        align-items: center;
-        padding: 20px 80px; /* Side padding keeps content off edges */
-    }
+@media screen and (min-width: 1025px) and (max-width: 1440px)
+{
+    body
+	{
+		background-image: url("../asset/img/img1.jpg"); background-size: cover;
+	}
+	
+	header
+	{
+		display: flex;
+		align-items: center;
+		padding: 10px 20px;	
+	}
+	
+	nav.header a
+	{
+		margin-left: 70%;
+		text-decoration: none;
+		color: white;
+		word-spacing: 20px;
+	}
+	
+	.logo img 
+	{
+		margin-left: 250px;
+		width: 50px;
+		height: auto;
+	}
 
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+	.logo 
+	{
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+	
+	.logo a
+	{
+		text-decoration: none;
+		color: white;	
+		margin-right: 50px;
+	}
+	
+	section
+	{
+		color: white;
+		margin-left: 260px;
+		margin-top: 150px;
+	}
+	
+	.btns .agent
+	{
+		color: white;
+		border: none;
+		cursor: pointer;
+		margin-right: 10px;	margin-left: 300px;
+		background-color: black;
+		padding: 12px 24px;
+		border-radius: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+	.btns .loc
+	{
+		background-color: white;
+		color: black;
+		padding: 12px 24px;
+		border-radius: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
 
-    .logo img {
-        width: 50px;
-    }
-
-    nav.header {
-        display: flex;
-        gap: 30px; /* spacing between links */
-    }
-
-    nav.header a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-    }
-
-    section {
-        color: white;
-        margin-left: 100px;
-        margin-top: 150px;
-    }
+	.btns buttons:hover
+	{
+		opacity: 0.8;
+		transform: translate(-2px);
+	}
+	 
+	#search-form 
+	{
+		display: flex;       /* Put input and button side-by-side */
+		max-width: 300px;
+		gap: 10px;           /* Space between them */
+		width: 60%;
+	}
+	
+	input[type="search"] 
+	{
+		flex-grow: 1;        /* Makes input fill available space */
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		margin-left: 200px;
+		width: 60%;
+	}
+	
+	button
+	{
+		padding: 10px 20px;
+		background-color: #007bff;
+		color: white;
+		border: none;
+		cursor: pointer;
+	}
 }
-
