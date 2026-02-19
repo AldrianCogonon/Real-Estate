@@ -169,6 +169,10 @@ body
         max-width: 400px;
         gap: 10px;
         margin-left: 300px; margin-top: 20px;
+
+		animation: entranceEffect 0.8s ease-out forwards;
+    	animation-delay: 0.4s; /* Starts after the second button (0.2s) */
+    	opacity: 0;           /* Hidden until animation starts */
     }
 
     input[type="search"] {
@@ -187,4 +191,5 @@ body
         cursor: pointer;
     }
 }
+
 
