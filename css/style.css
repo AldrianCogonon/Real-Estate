@@ -19,7 +19,7 @@ body
         width: 20px; height: auto;
     }
     .logo a {
-        margin-right: 0;
+        margin-right: 50px;
     }
     nav.header {
         margin-top: 15px;
@@ -173,3 +173,4 @@ body
 		cursor: pointer;
 	}
 }
+
