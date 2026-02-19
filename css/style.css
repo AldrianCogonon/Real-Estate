@@ -80,7 +80,7 @@ body
 	
 	nav.header a
 	{
-		margin-left: 70%;
+		margin-left: 20px;
 		text-decoration: none;
 		color: white;
 		word-spacing: 20px;
@@ -173,4 +173,5 @@ body
 		cursor: pointer;
 	}
 }
+
 
