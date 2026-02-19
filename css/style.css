@@ -178,7 +178,16 @@ body
 		border: none;
 		cursor: pointer;
 	}
+
+	/* Animations for Buttons */
+	.btns .agent:hover, .btns .loc:hover 
+	{
+    	transform: translateY(-3px); /* Lifts the button up */
+   		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+    	opacity: 0.9; /* Slight transparency change */
+	}
 }
+
 
 
 
