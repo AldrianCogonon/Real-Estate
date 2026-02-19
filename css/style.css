@@ -180,13 +180,36 @@ body
 	}
 
 	/* Animations for Buttons */
-	.btns .agent:hover, .btns .loc:hover 
+	@keyframes entranceEffect
 	{
-    	transform: translateY(-3px); /* Lifts the button up */
-   		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
-    	opacity: 0.9; /* Slight transparency change */
+    	from
+		{
+        	opacity: 0;
+        	transform: translateY(30px); /* Starts slightly lower */
+    	}
+    	to 
+		{
+        	opacity: 1;
+        	transform: translateY(0);    /* Ends at original position */
+    	}
 	}
+
+	/* 2. Apply the Animation to your buttons */
+	.btns .agent, .btns .loc
+	{
+    	/* Animation Name | Duration | Timing | Fill Mode */
+    	animation: entranceEffect 0.8s ease-out forwards;
+    	opacity: 0; /* Keeps them hidden until the animation starts */
+	}
+
+	/* 3. Stagger the second button (Optional: makes it appear 0.2s later) */
+	.btns .loc
+	{
+    	animation-delay: 0.2s;
+	}
+
 }
+
 
 
 
