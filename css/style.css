@@ -164,32 +164,53 @@ body
     }
 
     /* SEARCH FORM */
-    #search-form {
-        display: flex;
-        max-width: 400px;
-        gap: 10px;
-        margin-left: 300px; margin-top: 20px;
 
-		animation: entranceEffect 0.8s ease-out forwards;
-    	animation-delay: 0.4s; /* Starts after the second button (0.2s) */
+	/* Container for the input and icon */
+	.search-wrapper
+	{
+    	position: relative; /* Essential for placing the icon inside */
+    	display: inline-block;
+    	width: 350px;
+	}
+    #search-form
+	{
+        margin-left: 300px; margin-top: 0;
+		width: 100px;
+    	animation: entranceEffect 0.8s ease-out forwards;
+    	animation-delay: 0.4s;
     	opacity: 0;           /* Hidden until animation starts */
     }
 
     input[type="search"] {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        width: 250px;
+		width: 100%;
+    	padding: 12px 45px 12px 15px; /* Extra padding on right for the icon */
+    	border: 1px solid #ccc;
+    	border-radius: 25px; /* Rounded look for a modern search bar */
+    	font-size: 14px;
+    	outline: none;
     }
+	/* The Magnifying Glass Button */
+	.search-icon-btn
+	{
+    	position: absolute;
+    	right: 10px;
+    	top: 50%;
+    	transform: translateY(-50%); /* Perfectly centers it vertically */
+    	background: none;
+    	border: none;
+    	cursor: pointer;
+    	color: #555;
+    	display: flex;
+    	align-items: center;
+    	padding: 0;
+	}
 
-    #search-form button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+	.search-icon-btn:hover 
+	{
+    	color: #007bff; /* Changes icon color on hover */
+	}
+    
 }
+
 
 
