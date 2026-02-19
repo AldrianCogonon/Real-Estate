@@ -66,22 +66,18 @@ body
 /* Desktop */
 @media screen and (min-width: 1025px) and (max-width: 1440px)
 {
-    body
-	{
-		background-image: url("../asset/img/img1.jpg"); background-size: cover;
-	}
-	
 	header
 	{
 		display: flex;
 		align-items: center;
 		padding: 10px 20px;	
+		justify-content: space-between;
 	}
 
 	nav.header
 	{
-		float: right;
-		margin-top: 15px;
+		margin-left: auto;
+		margin-top: 0;
 	}
 	nav.header a
 	{
@@ -178,6 +174,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
