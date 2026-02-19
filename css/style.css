@@ -175,7 +175,7 @@ body
     #search-form
 	{
         margin-left: 300px; margin-top: 0;
-		width: 100px;
+		width: 200px;
     	animation: entranceEffect 0.8s ease-out forwards;
     	animation-delay: 0.4s;
     	opacity: 0;           /* Hidden until animation starts */
@@ -211,6 +211,7 @@ body
 	}
     
 }
+
 
 
 
