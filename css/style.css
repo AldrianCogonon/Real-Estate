@@ -6,7 +6,7 @@ body
 	}
 
 /* Mobile */
-@media screen and (max-width: 6000px) {
+@media screen and (max-width: 600px) and (min-width: 480)  {
 	header {
         flex-direction: column;
         padding: 10px;
@@ -169,6 +169,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
