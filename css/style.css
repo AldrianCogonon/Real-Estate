@@ -77,13 +77,18 @@ body
 		align-items: center;
 		padding: 10px 20px;	
 	}
-	
+
+	nav.header
+	{
+		float: right;
+		margin-top: 15px;
+	}
 	nav.header a
 	{
-		margin-left: 20px;
+		margin-left: 30px;
 		text-decoration: none;
 		color: white;
-		word-spacing: 20px;
+		font-weight: 600;
 	}
 	
 	.logo img 
@@ -173,5 +178,6 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
