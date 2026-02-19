@@ -80,7 +80,7 @@ body
 	
 	nav.header a
 	{
-		margin-left: 70%;
+		margin-left: auto;
 		text-decoration: none;
 		color: white;
 	}
@@ -172,6 +172,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
