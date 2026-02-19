@@ -1,12 +1,13 @@
 /* Global Declaration. Will affect everything below */
-body
-	{
-		background-image: url.("../asset/img/img1.jpg");
-		background-size: cover;
-	}
+body {
+    background-image: url("../asset/img/img1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* Mobile */
-@media screen  and (min-width: 480) and (max-width: 600px) {
+@media screen  and (min-width: 480px) and (max-width: 600px) {
 	header {
         flex-direction: column;
         padding: 10px;
@@ -61,7 +62,7 @@ body
 }
 
 /* Desktop */
-@media screen and (min-width: 1025px) and (max-width: 1024px) 
+@media screen and (min-width: 1024px) and (max-width: 1025px) 
 {
     body
 	{
@@ -169,6 +170,7 @@ body
 		cursor: pointer;
 	}
 }
+
 
 
 
