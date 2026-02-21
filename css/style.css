@@ -1,15 +1,20 @@
 /* Global Declaration. Will affect everything below */
 
-
+html, body 
+{
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent body scroll */
+}
 .scroll-container 
 {
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto; /* better than scroll */
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
 }
 
-.snap-section {
+.snap-section 
+{
     height: 100vh;
     width: 100%;
     scroll-snap-align: start; /* Snap point */
@@ -18,44 +23,46 @@
     flex-direction: column;
 }
 
-html
-{
-	height: 100%;
-}
 body 
 {
     background-image: url("../asset/img/img1.jpg");
     background-size: cover; background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-	min-height: 100%; margin: 0;
+	min-height: 100%; 
 }
 
 /* Mobile */
 @media screen  and (max-width: 600px) 
 {
-	header {
+	header 
+	{
         flex-direction: column;
         padding: 10px;
     }
-    .logo img {
+    .logo img 
+	{
         margin-left: 100px; 
         width: 20px; height: auto;
     }
-    .logo a {
+    .logo a 
+	{
         margin-right: 50px;
     }
-    nav.header {
+    nav.header 
+	{
         margin-top: 15px;
     }
-    nav.header a {
+    nav.header a 
+	{
         margin-left: 10px;
         font-size: 14px;
     }
-    section {
-        margin: 80px 20px 0 20px; /* Center text */
-        text-align: center;
-    }
+    .snap-section 
+	{
+    	padding: 80px 20px 0 20px;
+	}	
+
     .btns .agent, .btns .loc {
         margin: 10px 0;
         width: 100%; /* Stack buttons */
@@ -238,6 +245,7 @@ body
 	}
 
 }
+
 
 
 
