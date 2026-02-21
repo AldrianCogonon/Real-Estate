@@ -1,145 +1,184 @@
-/* Global Declaration. Will affect everything below */
+/* ============================= */
+/* GLOBAL RESET + SCROLL SETUP  */
+/* ============================= */
 
-html, body 
-{
+html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Prevent body scroll */
-}
-.scroll-container 
-{
-    height: 100vh;
-    overflow-y: auto; /* better than scroll */
-    scroll-snap-type: y mandatory;
+    overflow: hidden; /* Prevent body from scrolling */
 }
 
-.snap-section 
-{
+/* Main Scroll Container */
+.scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Each Snap Section */
+.snap-section {
     height: 100vh;
     width: 100%;
-    scroll-snap-align: start; /* Snap point */
+    scroll-snap-align: start;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-body 
-{
+/* ============================= */
+/* LANDING BACKGROUND FIX       */
+/* ============================= */
+
+.landing-page {
     background-image: url("../asset/img/img1.jpg");
-    background-size: cover; background-attachment: fixed;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-	min-height: 100%; 
+    color: white;
 }
 
-/* Mobile */
-@media screen  and (max-width: 600px) 
-{
-	header 
-	{
+/* Optional: darker overlay for readability */
+.landing-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.landing-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================= */
+/* MOBILE (max 600px)           */
+/* ============================= */
+
+@media screen and (max-width: 600px) {
+
+    header {
         flex-direction: column;
         padding: 10px;
     }
-    .logo img 
-	{
-        margin-left: 100px; 
-        width: 20px; height: auto;
+
+    .logo img {
+        margin-left: 100px;
+        width: 20px;
+        height: auto;
     }
-    .logo a 
-	{
+
+    .logo a {
         margin-right: 50px;
     }
-    nav.header 
-	{
+
+    nav.header {
         margin-top: 15px;
     }
-    nav.header a 
-	{
+
+    nav.header a {
         margin-left: 10px;
         font-size: 14px;
     }
-    .snap-section 
-	{
-    	padding: 80px 20px 0 20px;
-	}	
 
-    .btns .agent, .btns .loc {
-        margin: 10px 0;
-        width: 100%; /* Stack buttons */
+    .snap-section {
+        padding: 80px 20px 0 20px;
     }
+
+    .btns .agent,
+    .btns .loc {
+        margin: 10px 0;
+        width: 100%;
+    }
+
     input[type="search"] {
         margin-left: 0;
         width: 100%;
     }
 }
 
-/* Tablet */
-@media screen and (min-width: 601px) and (max-width: 1024px) 
-{
+/* ============================= */
+/* TABLET (601px–1024px)        */
+/* ============================= */
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
     header {
         justify-content: space-around;
     }
+
     .logo img {
         margin-left: 20px;
     }
-    section {
-        margin-left: 50px;
-        margin-top: 100px;
+
+    .snap-section {
+        padding-left: 50px;
+        padding-top: 100px;
     }
+
     .btns .agent {
         margin-left: 50px;
     }
+
     input[type="search"] {
         margin-left: 50px;
     }
 }
 
-/* Animations for Buttons */
-@keyframes entranceEffect
-{
-    from
-	{
+/* ============================= */
+/* ANIMATIONS                   */
+/* ============================= */
+
+@keyframes entranceEffect {
+    from {
         opacity: 0;
-        transform: translateY(30px); /* Starts slightly lower */
+        transform: translateY(30px);
     }
-    to 
-	{
+    to {
         opacity: 1;
-        transform: translateY(0);    /* Ends at original position */
+        transform: translateY(0);
     }
 }
 
-/* Desktop */
+/* ============================= */
+/* DESKTOP (1025px–1440px)      */
+/* ============================= */
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
+
     header {
         display: flex;
         align-items: center;
-        padding: 10px 20px;	
+        padding: 10px 20px;
         justify-content: space-between;
     }
 
-    /* LOGO SECTION */
+    /* LOGO */
     .logo {
         display: flex;
         gap: 10px;
         align-items: center;
     }
+
     .logo img {
-        margin-left: 250px; 
+        margin-left: 250px;
         width: 50px;
         height: auto;
     }
+
     .logo a {
         text-decoration: none;
-        color: white;	
+        color: white;
         margin-right: 50px;
     }
 
-    /* NAVIGATION SECTION */
+    /* NAV */
     nav.header {
         margin-left: auto;
-        margin-right: 250px; /* Symmetric spacing to match logo */
+        margin-right: 250px;
     }
+
     nav.header a {
         margin-left: 30px;
         text-decoration: none;
@@ -147,15 +186,16 @@ body
         font-weight: 600;
     }
 
-    /* HERO SECTION */
-    section {
+    /* FIXED: padding instead of margin */
+    .snap-section {
+        padding-left: 260px;
+        padding-top: 150px;
         color: white;
-        margin-left: 260px;
-        margin-top: 150px;
     }
 
-    /* BUTTONS BASE STYLES */
-    .btns .agent, .btns .loc {
+    /* BUTTONS */
+    .btns .agent,
+    .btns .loc {
         padding: 12px 24px;
         border-radius: 8px;
         font-size: 16px;
@@ -163,10 +203,9 @@ body
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
-        
-        /* Entrance Animation */
+
         animation: entranceEffect 0.8s ease-out forwards;
-        opacity: 0; 
+        opacity: 0;
     }
 
     .btns .agent {
@@ -179,76 +218,62 @@ body
     .btns .loc {
         background-color: white;
         color: black;
-        animation-delay: 0.2s; /* Staggered entrance */
+        animation-delay: 0.2s;
     }
 
-    /* HOVER EFFECTS (Cleaned & Combined) */
-    .btns .agent:hover, .btns .loc:hover {
+    .btns .agent:hover,
+    .btns .loc:hover {
         opacity: 0.8;
-        transform: translateY(-3px); /* Lifts up */
+        transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    /* SEARCH FORM */
+    /* SEARCH */
+    .search-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 350px;
+    }
 
-	/* Container for the input and icon */
-	.search-wrapper
-	{
-    	position: relative; /* Essential for placing the icon inside */
-    	display: inline-block;
-    	width: 350px;
-	}
-    #search-form
-	{
-        margin-left: 300px; margin-top: 0;
-		width: 200px;
-    	animation: entranceEffect 0.8s ease-out forwards;
-    	animation-delay: 0.4s;
-    	opacity: 0;           /* Hidden until animation starts */
+    #search-form {
+        margin-left: 300px;
+        width: 200px;
+        animation: entranceEffect 0.8s ease-out forwards;
+        animation-delay: 0.4s;
+        opacity: 0;
     }
 
     input[type="search"] {
-		width: 100%;
-    	padding: 12px 45px 12px 15px; /* Extra padding on right for the icon */
-    	border: 1px solid #ccc;
-    	border-radius: 25px; /* Rounded look for a modern search bar */
-    	font-size: 14px;
-    	outline: none;
+        width: 100%;
+        padding: 12px 45px 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        font-size: 14px;
+        outline: none;
     }
-	/* The Magnifying Glass Button */
-	.search-icon-btn
-	{
-    	position: absolute;
-    	right: 10px;
-    	top: 50%;
-    	transform: translateY(-50%); /* Perfectly centers it vertically */
-    	background: none;
-    	border: none;
-    	cursor: pointer;
-    	color: #555;
-    	display: flex;
-    	align-items: center;
-    	padding: 0;
-	}
 
-	.search-icon-btn:hover 
-	{
-    	color: #007bff; /* Changes icon color on hover */
-	}
+    .search-icon-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #555;
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
 
-	header.secpg h3 
-	{
-    	display: inline-block;
-    	border-bottom: 4px solid #007bff;
-    	padding-bottom: 12px; /* This creates the "stylish gap" */
-    	line-height: 1.2;
-	}
+    .search-icon-btn:hover {
+        color: #007bff;
+    }
 
+    header.secpg h3 {
+        display: inline-block;
+        border-bottom: 4px solid #007bff;
+        padding-bottom: 12px;
+        line-height: 1.2;
+    }
 }
-
-
-
-
-
-
-
