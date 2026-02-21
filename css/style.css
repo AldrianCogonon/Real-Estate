@@ -1,5 +1,6 @@
 /* Global Declaration. Will affect everything below */
 
+
 .scroll-container 
 {
     height: 100vh;
@@ -8,11 +9,13 @@
     scroll-behavior: smooth;
 }
 
-.snap-section 
-{
+.snap-section {
     height: 100vh;
     width: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: start; /* Snap point */
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 html
@@ -235,6 +238,7 @@ body
 	}
 
 }
+
 
 
 
