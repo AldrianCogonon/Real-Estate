@@ -190,6 +190,7 @@ body
     	border: 1px solid #ccc; border-radius: 25px;
     	font-size: 14px;
     	outline: none;
+		background-color: rgba(255, 255, 255, 0.9);
 	}
 
 	/* The Magnifying Glass Button */
@@ -227,6 +228,7 @@ body
 		text-align: left;
 	}
 }
+
 
 
 
