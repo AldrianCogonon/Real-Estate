@@ -212,19 +212,22 @@ body
 	{
     	color: #007bff; /* Changes icon color on hover */
 	}
+	/* uses flex box */
     .second-page
 	{
 		display: flex;
-		background-color: white;
-		padding: 500px; padding-top: 0;
-		flex-direction: column; min-height: 100vh;
-		margin-top: 200px;
+    	background-color: white;
+    	padding: 100px 50px; 
+    	flex-direction: column; 
+    	min-height: 100vh;
+    	margin-top: 0; /* Let the natural flow handle placement */
 	}
 	.second-page header
 	{
 		text-align: left;
 	}
 }
+
 
 
 
