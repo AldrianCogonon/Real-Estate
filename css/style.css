@@ -169,9 +169,9 @@ body
 	/* Container for the input and icon */
 	.search-wrapper {
     position: relative; 
-    display: inline-block; /* Keeps it on the same line as other nav items */
+    display: block; /* Keeps it on the same line as other nav items */
     margin-left: 300px;    /* Use margin on the wrapper to push the whole unit */
-    width: 400px;          /* Set the total width here */
+    width: 600px;          /* Set the total width here */
 	}
 
 	#search-form 
@@ -179,7 +179,7 @@ body
     	width: 100%;           /* Form fills the 400px wrapper */
     	animation: entranceEffect 0.8s ease-out forwards;
     	animation-delay: 0.4s;
-    	opacity: 0;
+    	opacity: 0; margin: 0;
 	}	
 
 	input[type="search"]
@@ -225,6 +225,7 @@ body
 		text-align: left;
 	}
 }
+
 
 
 
