@@ -175,14 +175,15 @@ body
 	}
     #search-form
 	{
-        margin-left: 300px; margin-top: 0;
-		width: 200px;
+        position: relative; margin-top: 0;
+		left: 300px; width: 400px;
     	animation: entranceEffect 0.8s ease-out forwards;
     	animation-delay: 0.4s;
     	opacity: 0;           /* Hidden until animation starts */
     }
 
-    input[type="search"] {
+    input[type="search"]
+	{
 		width: 100%;
     	padding: 12px 45px 12px 15px; /* Extra padding on right for the icon */
     	border: 1px solid #ccc;
@@ -218,7 +219,12 @@ body
 		flex-direction: column; min-height: 100vh;
 		margin-top: 200px;
 	}
+	.second-page header
+	{
+		text-align: left;
+	}
 }
+
 
 
 
