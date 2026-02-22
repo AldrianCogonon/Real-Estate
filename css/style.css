@@ -209,9 +209,13 @@ body
 	{
     	color: #007bff; /* Changes icon color on hover */
 	}
-    section.secpg
+    .second-page
 	{
-		background-image: url("../asset/img/img3.jpg");
+		display: flex;
+		background-color: white;
+		padding: 500px;
+		border: solid;
 	}
 }
+
 
