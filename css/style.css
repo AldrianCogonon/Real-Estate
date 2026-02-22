@@ -20,6 +20,7 @@ body, html {
     display: flex;
     flex-direction: column;
     color: white;
+    position: relative;
 }
 
 /* HEADER NAVIGATION */
@@ -55,18 +56,18 @@ nav.header a {
 .btns {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.btns {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    position: relative;
     margin-top: 30px;
     transform: translateX(-120px); /* value left movement */
+    padding: 12px 24px;
+    border-radius: 12px 12px 0 0; /* TL TR BR BL */ border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
+.btns:: hover { background: #222; transform: translateY(2px);}
 .loc { background: white; color: black; }
 
 /* SEARCH BAR SECTION - Centered & Wide */
@@ -91,6 +92,17 @@ nav.header a {
     max-width: 90%;
 }
 
+.search-wrapper::before
+{
+     content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
 input[type="search"] {
     width: 100%;
     padding: 15px 55px 15px 25px;
@@ -100,7 +112,7 @@ input[type="search"] {
     outline: none;
     background: rgba(255, 255, 255, 0.95);
 }
-
+ .btns:hover + #search-form .search-wrapper::before { opacity: 1; }
 .search-icon-btn {
     position: absolute;
     right: 15px;
@@ -148,6 +160,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
