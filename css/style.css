@@ -214,10 +214,11 @@ body
 		display: flex;
 		background-color: white;
 		padding: 500px; padding-top: 0;
-		border: solid; height: 60%;
-		margin-top: 50px;
+		border: solid;
+		margin-top: 200px;
 	}
 }
+
 
 
 
