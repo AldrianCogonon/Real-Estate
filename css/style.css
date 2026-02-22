@@ -56,7 +56,7 @@ nav.header a {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px; margin-left: 50px;
+    margin-top: 30px; margin-left: 300px;
 }
 
 .btns button {
@@ -149,6 +149,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
