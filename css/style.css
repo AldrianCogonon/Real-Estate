@@ -59,18 +59,35 @@ nav.header a {
     gap: 10px;
     position: relative;
     margin-top: 30px;
-    transform: translateX(-120px); /* value left movement */
-    padding: 12px 24px;
-    border-radius: 12px 12px 0 0; /* TL TR BR BL */ border: none;
+    transform: translateX(-120px);
+}
+
+/* Style the ACTUAL buttons */
+.btns button {
+    padding: 14px 28px;
+    border: none;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 12px 12px 0 0;
     transition: all 0.3s ease;
 }
 
-.btns:: hover { background: #222; transform: translateY(2px);}
-.agent { background-color: black; color: white; padding: 30px}
-.loc { background: white; color: black; padding: 30px;}
+/* Individual colors */
+.agent {
+    background-color: black;
+    color: white;
+}
 
+.loc {
+    background-color: white;
+    color: black;
+}
+
+/* Hover effect */
+.btns button:hover {
+    transform: translateY(3px);
+    opacity: 0.9;
+}
 /* SEARCH BAR SECTION - Centered & Wide */
 .search-container {
     display: flex;
@@ -107,7 +124,7 @@ nav.header a {
 input[type="search"] {
     width: 100%;
     padding: 15px 55px 15px 25px;
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
     border: none;
     font-size: 16px;
     outline: none;
@@ -161,6 +178,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
