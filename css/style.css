@@ -46,7 +46,68 @@ header {
     transition: margin 0.3s ease; 
 }
 
-.logo img { width: 50px; height: auto; margin-left: 250px;}
+/* LOGO - Base Glow Animation */
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-left: 250px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    animation: strongGlow 2s ease-in-out infinite alternate;
+}
+
+/* Glow Keyframes */
+@keyframes strongGlow {
+    0% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+    }
+    25% {
+        filter: drop-shadow(0 0 10px rgba(255,255,255,0.5))
+                drop-shadow(0 0 20px rgba(255,255,255,0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.7))
+                drop-shadow(0 0 25px rgba(255,255,255,0.4));
+    }
+    75% {
+        filter: drop-shadow(0 0 10px rgba(255,255,255,0.5))
+                drop-shadow(0 0 20px rgba(255,255,255,0.3));
+    }
+    100% {
+        filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+    }
+}
+
+/* Hover Shine Effect */
+.logo img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.5) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.logo img:hover::after {
+    animation: shine 1.2s forwards;
+}
+
+/* Shine Animation Keyframes */
+@keyframes shine {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+
 .logo a { text-decoration: none; color: white; font-weight: bold; }
 
 nav.header a {
@@ -207,6 +268,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
