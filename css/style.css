@@ -167,30 +167,31 @@ body
     /* SEARCH FORM */
 
 	/* Container for the input and icon */
-	.search-wrapper
-	{
-    	position: relative; /* Essential for placing the icon inside */
-    	display: inline-block;
-    	width: 350px;
+	.search-wrapper {
+    position: relative; 
+    display: inline-block; /* Keeps it on the same line as other nav items */
+    margin-left: 300px;    /* Use margin on the wrapper to push the whole unit */
+    width: 400px;          /* Set the total width here */
 	}
-    #search-form
+
+	#search-form 
 	{
-        position: relative; margin-top: 0;
-		left: 300px; width: 400px;
+    	width: 100%;           /* Form fills the 400px wrapper */
     	animation: entranceEffect 0.8s ease-out forwards;
     	animation-delay: 0.4s;
-    	opacity: 0;           /* Hidden until animation starts */
-    }
+    	opacity: 0;
+	}	
 
-    input[type="search"]
+	input[type="search"]
 	{
-		width: 100%;
-    	padding: 12px 45px 12px 15px; /* Extra padding on right for the icon */
-    	border: 1px solid #ccc;
-    	border-radius: 25px; /* Rounded look for a modern search bar */
+    	width: 100%;           /* Input fills the form */
+    	box-sizing: border-box; /* IMPORTANT: Keeps padding from stretching width */
+    	padding: 12px 45px 12px 15px;
+    	border: 1px solid #ccc; border-radius: 25px;
     	font-size: 14px;
     	outline: none;
-    }
+	}
+
 	/* The Magnifying Glass Button */
 	.search-icon-btn
 	{
@@ -224,6 +225,7 @@ body
 		text-align: left;
 	}
 }
+
 
 
 
