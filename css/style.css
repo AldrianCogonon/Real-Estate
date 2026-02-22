@@ -67,7 +67,7 @@ nav.header a {
     font-weight: bold;
 }
 
-.agent { background: black; color: white; }
+.agent { background: black; color: white; margin-left: 100px;}
 .loc { background: white; color: black; }
 
 /* SEARCH BAR SECTION - Centered & Wide */
@@ -126,4 +126,5 @@ input[type="search"] {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 
