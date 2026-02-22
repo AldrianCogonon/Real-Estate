@@ -214,6 +214,7 @@ input[type="search"] {
     outline: none;
     background: rgba(255, 255, 255, 0.95);
     transition: box-shadow 0.3s ease;
+    padding-right: 80px;
 }
 
 /* glow when focus */
@@ -223,13 +224,15 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 
 .search-icon-btn {
     position: absolute;
-    right: 15px;
+    right: 15px; /* adjust to move slightly away from edge */
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
     color: #333;
+    font-size: 22px; /* adjust icon size */
+    padding: 5px;    /* clickable area bigger */
 }
 
 /* SECOND PAGE - Solid White */
@@ -268,6 +271,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
