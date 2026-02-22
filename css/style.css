@@ -209,5 +209,9 @@ body
 	{
     	color: #007bff; /* Changes icon color on hover */
 	}
-    
+    section.secpg
+	{
+		background-image: url("../asset/img/img3.jpg");
+	}
 }
+
