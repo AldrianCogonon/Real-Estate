@@ -213,9 +213,10 @@ body
 	{
 		display: flex;
 		background-color: white;
-		padding: 500px;
+		padding: 500px; padding-top: 0;
 		border: solid;
 	}
 }
+
 
 
