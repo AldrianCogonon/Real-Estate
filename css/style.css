@@ -135,7 +135,16 @@ nav.header a {
     gap: 10px;
     position: relative;
     margin-top: 30px;
-    transform: translateX(-190px);
+    opacity: 0;
+    transform: translateY(20px) translateX(-255px);
+    animation: fadeUpBtn 0.8s ease forwards 0.7s; /* delay after hero text */
+}
+
+@keyframes fadeUpBtn {
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(-255px);
+    }
 }
 
 /* Style the ACTUAL buttons */
@@ -271,6 +280,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
