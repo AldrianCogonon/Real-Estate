@@ -51,6 +51,13 @@ nav.header a {
 .hero-text {
     text-align: center;
     margin-top: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards 0.5s; /* delayed for nice sequencing */
+}
+@keyframes fadeUp
+{
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .btns {
@@ -64,14 +71,26 @@ nav.header a {
 
 /* Style the ACTUAL buttons */
 .btns button {
-    padding: 15px;
+    padding: 15px 28px;
     border: none;
     cursor: pointer;
     font-weight: bold;
     border-radius: 12px 12px 0 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
+ /* Hover effect and animation */
+.btns button:hover {
+    transform: translateY(3px);
+    opacity: 0.95;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.btns button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 /* Individual colors */
 .agent {
     background-color: black;
@@ -82,9 +101,6 @@ nav.header a {
     background-color: white;
     color: black;
 }
-
-/* Hover effect */
-.btns button:hover { opacity: 0.9; }
 
 /* SEARCH BAR SECTION - Centered & Wide */
 .search-container {
@@ -119,6 +135,7 @@ nav.header a {
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
+
 input[type="search"] {
     width: 100%;
     padding: 15px 55px 15px 25px;
@@ -127,8 +144,14 @@ input[type="search"] {
     font-size: 16px;
     outline: none;
     background: rgba(255, 255, 255, 0.95);
+    transition: box-shadow 0.3s ease;
 }
- .btns:hover + #search-form .search-wrapper::before { opacity: 1; }
+
+/* glow when focus */
+input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
+ 
+.btns:hover + #search-form .search-wrapper::before { opacity: 1; }
+
 .search-icon-btn {
     position: absolute;
     right: 15px;
@@ -176,6 +199,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
