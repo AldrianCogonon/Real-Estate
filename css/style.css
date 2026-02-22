@@ -59,12 +59,12 @@ nav.header a {
     gap: 10px;
     position: relative;
     margin-top: 30px;
-    transform: translateX(-120px);
+    transform: translateX(-150px);
 }
 
 /* Style the ACTUAL buttons */
 .btns button {
-    padding: 14px 28px;
+    padding: 15px;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -84,10 +84,8 @@ nav.header a {
 }
 
 /* Hover effect */
-.btns button:hover {
-    transform: translateY(3px);
-    opacity: 0.9;
-}
+.btns button:hover { opacity: 0.9; }
+
 /* SEARCH BAR SECTION - Centered & Wide */
 .search-container {
     display: flex;
@@ -112,7 +110,7 @@ nav.header a {
 
 .search-wrapper::before
 {
-     content: "";
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: 0 0 30px 30px;
@@ -178,6 +176,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
