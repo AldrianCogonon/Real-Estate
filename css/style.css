@@ -59,15 +59,14 @@ nav.header a {
     margin-top: 30px;
 }
 
-.btns button {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    transform: translateX(-120px); /* value left movement */
 }
 
-.agent { background: black; color: white; transform: translate(x-50px);}
 .loc { background: white; color: black; }
 
 /* SEARCH BAR SECTION - Centered & Wide */
@@ -149,6 +148,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
