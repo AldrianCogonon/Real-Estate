@@ -116,11 +116,17 @@ input[type="search"] {
 /* SECOND PAGE - Solid White */
 .second-page {
     background-color: white;
-    min-height: 100vh;
-    padding: 80px 50px;
     color: black;
 }
 
+.second-page, .third-page, .fourth-page {
+    min-height: 100vh;
+    padding: 80px 50px;
+}
+
+.second-page { background-color: white; color: black; }
+.third-page { background-color: #f4f4f4; }
+.fourth-page { background-color: rgb(137, 137, 137); }
 /* ANIMATION */
 @keyframes entranceEffect {
     from { opacity: 0; transform: translateY(20px); }
@@ -142,5 +148,6 @@ input[type="search"] {
     .search-wrapper { width: 95%; }
     .btns { flex-direction: column; align-items: center; }
 }
+
 
 
