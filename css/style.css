@@ -68,7 +68,8 @@ nav.header a {
 }
 
 .btns:: hover { background: #222; transform: translateY(2px);}
-.loc { background: white; color: black; }
+.agent { background-color: black; color: white; padding: 30px}
+.loc { background: white; color: black; padding: 30px;}
 
 /* SEARCH BAR SECTION - Centered & Wide */
 .search-container {
@@ -160,6 +161,7 @@ input[type="search"] {
     .btns { flex-direction: column; align-items: center; }
     .hero-wrapper{background-attachment: scroll; }
 }
+
 
 
 
