@@ -16,7 +16,6 @@ body, html
 /* =====================
    HAMBURGER – GLOBAL STYLES
 ====================== */
-/* Hamburger menu bars */
 .hamburger {
     display: none; /* hidden on desktop */
     flex-direction: column;
@@ -24,39 +23,34 @@ body, html
     width: 30px;
     height: 22px;
     cursor: pointer;
-    z-index: 999; /* make sure it's above other elements */
+    z-index: 9999;
 }
 
-/* Hamburger lines */
 .hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  transform-origin: center; /* IMPORTANT for proper X */
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    transform-origin: center;
 }
 
-/* Hamburger -> X */
+/* Hamburger -> X animation */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(60deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px,5px);
 }
 
 .hamburger.open span:nth-child(2) {
-  opacity: 0; /* middle line hidden */
+    opacity: 0;
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-60deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(5px,-5px);
 }
-
-/* By default (desktop) hide icons */
-
-nav.header a ion-icon {
+ nav.header a ion-icon {
     display: none;
 }
-
 /* =========================
    2. HERO WRAPPER
 ========================= */
@@ -194,10 +188,7 @@ nav.header a:hover {
 /* NAV ANIMATION */
 nav.header {
     display: flex;
-    gap: 20px;                 /* spacing between links */
-    opacity: 0;
-    transform: translateX(50px);  /* slide in from right */
-    animation: slideInNav 0.8s ease forwards 0.5s; /* delay matches logo */
+    gap: 20px;
 }
 
 @keyframes slideInNav {
@@ -259,7 +250,7 @@ nav.header {
 }
 
 /* Base button style */
-.btns button {
+.btns input {
     width: 120px;        /* uniform width */
     height: 46px;        /* uniform height */
     padding: 0;
@@ -578,87 +569,84 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
    8. RESPONSIVE
 ===================== */
 
-@media screen and (max-width:1100px) 
-{ 
-	.logo img { margin-left:20px; } .search-wrapper{ width:70%; } 
+/* Desktop animation only */
+@media screen and (min-width: 761px) {
+
+    nav.header {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInNav 0.8s ease forwards 0.5s;
+    }
+
 }
 
 /* =======================
-   MOBILE HAMBURGER
+  LARGE DESKTOPS 
+======================== */
+@media screen and (max-width:1100px) 
+{ 
+    nav.header {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInNav 0.8s ease forwards 0.5s;
+    }
+
+	.logo img { margin-left:20px; } .search-wrapper{ width:70%; } 
+
+}
+
+/* =======================
+   MOBILE 
 ======================== */
 
 @media screen and (max-width: 760px) {
 
-  /* Hamburger icon */
-  .hamburger {
-    display: flex;
-    position: fixed;
-    top: 25px;
-    right: 20px;
-    z-index: 3000;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+    .logo img{
+        margin-left: -35px;
+    }
+    /* show hamburger */
+    .hamburger{
+        display:flex;
+        position:fixed;
+        top:25px;
+        right:20px;
+    }
 
-  .hamburger span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.2s ease;
-  }
+    /* slide menu */
+    nav.header{
+        position:fixed;
+        top:0;
+        right:-260px;
+        width:260px;
+        height:80vh;
+        flex-direction:column;
+        background:rgba(0,0,0, 1); /*rgba(255,140,40,0.95); */
+        border-radius:10px 0 0 10px;
+        padding:60px 25px;
+        box-shadow:-5px 0 20px rgba(0,0,0,0.3);
+        transition:right 0.25s ease;
+        z-index:2500;
+    }
 
-  /* Transform to X when menu active */
-  .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .hamburger.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
+    /* open state */
+    nav.header.active{
+        right:0;
+    }
 
-  /* Sliding menu */
-  nav.header {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -250px;       /* start hidden offscreen */
-    width: 250px;
-    height: 80vh;        /* partial height */
-    background-color: rgba(255,140,40,0.95);
-    border-radius: 10px 0 0 10px;
-    padding: 50px 20px 20px 20px;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-    z-index: 2500;
-    transition: right 0.18s ease;  /* fast slide */
-  }
+    /* mobile links */
+    nav.header a{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        padding:12px 0;
+        font-size:16px;
+    }
 
-  /* Active menu slides in */
-  nav.header.active {
-    right: 0;
-  }
+    /* show icons on mobile */
+    nav.header a ion-icon{
+        display:inline-block;
+        font-size:20px;
+    }
 
-  /* Menu links */
-  nav.header a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 0;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-  }
-
-  nav.header a ion-icon {
-    font-size: 20px;
-  }
 
 }
