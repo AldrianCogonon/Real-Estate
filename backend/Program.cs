@@ -35,10 +35,8 @@ app.UseRateLimiter();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-/* REGISTER ROUTES */
 AuthRoutes.MapRoutes(app);
 
-/* CHAT ROUTES */
 ChatRoutes.MapRoutes(app);
 
 app.Run();
