@@ -1,0 +1,13 @@
+# Build artifacts
+bin/
+obj/
+
+# Node / Lib dependencies (if any)
+wwwroot/lib/
+
+# User settings
+*.user
+*.suo
+
+# Logs
+*.log
