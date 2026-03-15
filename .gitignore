@@ -11,3 +11,8 @@ wwwroot/lib/
 
 # Logs
 *.log
+
+# Ignore development settings and build folders
+appsettings.Development.json
+bin/
+obj/
