@@ -11,8 +11,13 @@ html
 body, html
 {
 	margin: 0; padding: 0; font-family: sans-serif; 
+    overflow-x: hidden;
 }
-
+/*
+body{
+     background: url("../asset/img/img1.jpg");
+    
+}
 /* =====================
    HAMBURGER – GLOBAL STYLES
 ====================== */
@@ -38,7 +43,7 @@ body, html
 
 /* Hamburger -> X animation */
 .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px,5px);
+    transform: rotate(58deg) translate(5px,5px);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -46,7 +51,7 @@ body, html
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px,-5px);
+    transform: rotate(-58deg) translate(5px,-5px);
 }
  nav.header a ion-icon {
     display: none;
@@ -55,19 +60,16 @@ body, html
    2. HERO WRAPPER
 ========================= */
 .hero-wrapper{
-   background: url("../asset/img/img1.jpg") center/cover no-repeat;
-   min-height: 100svh;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   color: white;
-   position: relative;
-
-}
-.hero-wrapper{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
     position: relative;
-    min-height: 100svh;
     overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url("../asset/img/img24.jpeg");
+    background-size: cover;
+
 }
 
 .hero-wrapper::before{
@@ -97,6 +99,10 @@ body, html
     z-index: 1;         /* make sure logo/nav are below hamburger */
 }
 
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
 .logo {
     display: flex;
     align-items: center;
@@ -107,7 +113,7 @@ body, html
 .logo img {
     width: 50px;
     height: auto;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
     position: relative;
     z-index: 1;
     transition: all 0.3s ease;
@@ -422,7 +428,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 ========================================== */
 
 .carousel {
-    overflow: visible;
+    overflow: visible; overflow-x: hidden;
     margin-top: 20px; margin-bottom: 30px;
 }
 
@@ -575,20 +581,21 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 }
 
 .prop-input:hover{
+    transition: 0.5s ease-in-out;
     transform: scale(1.05);
     background-color: rgb(230, 230, 230);
 }
 
 .prop-input.resident {
-    background-image: url('asset/residential.png');
+    background-image: url("../asset/img/img13.jpg");
     background-size: cover;
 }
 .prop-input.commer {
-    background-image: url('asset/commercial.png');
+    background-image: url('../asset/img/img9.jpg');
     background-size: cover;
 }
-.prop-input.indu {
-    background-image: url('asset/industrial.png'); 
+.prop-input.indus {
+    background-image: url('../asset/img/img14.jpg'); 
     background-size: cover;
 }
 
@@ -596,8 +603,6 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     background-image: url('../asset/img/img10.jpg');
     background-size: cover;
 }
-.prop-input.mix { background-image: url('asset/mixed.png'); }
-
 
 /* input type texts */
 .prop-item h6{
@@ -641,14 +646,38 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 ===================== */
 
 .inquiry{
-    background-image: url("../asset/img/img8.jpg");
+    background-image: url("../asset/img/img25.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+/* Inquiry Header */
 .inquiry-header h1{
     margin-left: 330px;
-    padding-top: 80px;
+    padding-top: 40px;
     color: white;
     font-size: 50px;
+}
+
+.inquiry-header h2{
+    margin-left: 500px;
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.inquiry-parag{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 330px;
+    margin-top: 30px;
+}
+
+.inquiry-parag .p1{
+    font-size: 24px;
+    color: orangered;
+    font-weight: 600;
 }
 /* =====================
    11. FOOTER SECTION
@@ -678,9 +707,24 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 }
 
 /* =======================
+ LAPTOPS
+======================== */
+@media screen and (min-width: 1025px) and (max-width: 1440px)
+{ 
+    nav.header {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInNav 0.8s ease forwards 0.5s;
+    }
+
+	.logo img { margin-left:20px; } .search-wrapper{ width:70%; } 
+
+}
+
+/* =======================
   LARGE DESKTOPS 
 ======================== */
-@media screen and (max-width:1100px) 
+@media screen and (min-width:1441px) 
 { 
     nav.header {
         opacity: 0;
@@ -696,8 +740,11 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
    MOBILE 
 ======================== */
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
 
+    /* =======================
+    HAMBURGER
+    ======================== */
     .hamburger {
         display: flex;
         position: fixed;
@@ -751,6 +798,22 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
         display:inline-block;
         font-size:25px;
     }
+    
+    .hero-wrapper{
+        background-size: auto 100%; /* scale height to fit container */
+        background-position: top center; /* adjust focus */
+    }
+    /* =======================
+      SHORT TERM SECTION
+    ======================== */
 
-
+    .short-header {
+        margin-left: -150px;
+        font-size: 12px;
+    }
+    
+    .short-header .custom-line{
+        width: 300px;
+        margin: 1px 0 0 7px;
+    }
 }
