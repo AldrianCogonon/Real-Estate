@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,7 +38,23 @@ app.UseStaticFiles();
 
 AuthRoutes.MapRoutes(app);
 ChatRoutes.MapRoutes(app);
-RequestRoutes.MapRoutes(app);
+RequestRoutes.MapRoutes(app);   
 PropertyRoutes.MapRoutes(app);
+
+string usersFile = Path.Combine(builder.Environment.ContentRootPath, "users.json");
+
+app.MapGet("/api/users", () =>
+{
+    Console.WriteLine($"PATH: {usersFile}");
+
+    if (!File.Exists(usersFile))
+    {
+        Console.WriteLine("FILE NOT FOUND");
+        return Results.Json(new List<object>());
+    }
+
+    var json = File.ReadAllText(usersFile);
+    return Results.Content(json, "application/json");
+});
 
 app.Run();

@@ -37,8 +37,20 @@
   },
   {
     "Username": "drake",
-    "Email": "drake@gmail.com",
+    "Email": "maccogoth@gmail.com",
     "Password": "drake123",
+    "Redirect": "buy.html"
+  },
+  {
+    "Username": "dwyni",
+    "Email": "maccogoth@gmail.com",
+    "Password": "123",
+    "Redirect": "buy.html"
+  },
+  {
+    "Username": "santi",
+    "Email": "santi@gmail.com",
+    "Password": "123123123",
     "Redirect": "buy.html"
   }
 ]

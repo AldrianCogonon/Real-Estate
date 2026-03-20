@@ -5,62 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard - Real Estate</title>
 <link rel="stylesheet" href="css/admin.css">
+<link rel="icon" href="images/logo.png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <div class="container">
 <aside class="sidebar">
     <h2>Admin Panel</h2>
     <ul>
-        <li class="active" data-section="requests">Requests</li>
+        <li class="active" data-section="dashboard">Dashboard</li>
+        <li data-section="requests">Requests</li>
         <li data-section="properties">Properties</li>
         <li id="logoutBtn">Logout</li>
     </ul>
 </aside>
 <main class="main">
-    <header>
-        <h1>Admin Dashboard</h1>
-    </header>
-    <section id="requests" class="section">
-        <h2>Agent Requests</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Agent</th>
-                    <th>Agency</th>
-                    <th>User Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="requestsTable">
-            </tbody>
-        </table>
-    </section>
-    <section id="properties" class="section" style="display:none">
-        <h2>Manage Properties</h2>
-        <div class="form-group">
-            <input id="propName" type="text" placeholder="Property Name">
-            <input id="propAgent" type="text" placeholder="Agent Name">
-            <input id="propPrice" type="number" placeholder="Price">
-            <button id="addPropertyBtn">Add Property</button>
+<header><h1>Admin Dashboard</h1></header>
+<section id="dashboard" class="section">
+    <h2>Dashboard Overview</h2>
+    <div class="dashboard-cards">
+        <div class="card">
+            <h3 id="totalUsers">0</h3>
+            <p>Registered Users</p>
         </div>
-        <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Agent</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="propertiesTable">
-            </tbody>
-        </table>
-    </section>
+        <div class="card">
+            <h3 id="totalRequests">0</h3>
+            <p>Agent Requests</p>
+        </div>
+    </div>
+    <canvas id="dashboardChart"></canvas>
+</section>
+<section id="requests" class="section" style="display:none">
+    <h2>Agent Requests</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Agent</th>
+                <th>Agency</th>
+                <th>User Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="requestsTable"></tbody>
+    </table>
+</section>
+<section id="properties" class="section" style="display:none">
+    <h2>Manage Properties</h2>
+    <div class="form-group">
+        <input id="propName" placeholder="Property Name">
+        <input id="propAgent" placeholder="Agent Name">
+        <input id="propPrice" type="number" placeholder="Price">
+        <button id="addPropertyBtn" class="add">Add Property</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Agent</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="propertiesTable"></tbody>
+    </table>
+</section>
 </main>
+</div>
+<div id="confirmModal" class="modal">
+<div class="modal-box">
+    <p id="confirmText"></p>
+    <div class="modal-actions">
+        <button id="confirmYes">Yes</button>
+        <button id="confirmNo">Cancel</button>
+    </div>
+</div>
+</div>
+<div id="editModal" class="modal">
+<div class="modal-box">
+    <h3>Edit Property</h3>
+    <input id="editName">
+    <input id="editAgent">
+    <input id="editPrice" type="number">
+    <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button onclick="closeModal('editModal')">Cancel</button>
+    </div>
+</div>
 </div>
 <script src="javascript/admin.js"></script>
 </body>

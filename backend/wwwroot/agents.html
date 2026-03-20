@@ -44,18 +44,15 @@
             <a href="#agents" class="cta-button">Find an Agent</a>
         </div>
 </section>
-
 <section class="agents" id="agents">
     <h1>Top Agents</h1>
     <p>Discover our top agents who are ready to assist you with your real estate needs. With their expertise and dedication, they will help you navigate the market and find the perfect property</p>
-
     <div class="search-bar">
         <span class="search-icon material-icons">search</span>
         <input type="search" placeholder="Agents name" id="searchInput">
         <span class="clear-icon material-icons">close</span><button type="submit" class="search-button">
         <span class="material-icons">arrow_forward</span></button>
     </div>
-    
     <div class="agent-card">
         <img src="images/agent1.jfif" alt="dwyn" class="agent-photo">
         <div class="agent-info">
@@ -190,14 +187,15 @@
     <div class="modal-right">
         <h3>Contact Agent</h3>
         <form id="contactForm">
-            <input type="text" placeholder="Your Name" id="userName" required>
-            <input type="tel" placeholder="Your Contact Number" id="userPhone" required>
-            <input type="email" placeholder="Your Email" id="userEmail" required>
-            <input type="text" placeholder="Your Address" id="userAddress" required>
+            <input type="text" placeholder="Your Name" id="userName" maxlength="100" required>
+            <input type="tel" placeholder="Your Contact Number" id="userPhone" maxlength="40" required>
+            <input type="email" placeholder="Your Email" id="userEmail" maxlength="50" required>
+            <input type="text" placeholder="Your Address" id="userAddress" maxlength="50" required>
             <button type="submit">Send Message</button>
         </form>
     </div>
 </div>
 </div>
+<div id="centerToast" class="center-toast"></div>
 </body>
 </html>

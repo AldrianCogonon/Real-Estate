@@ -1,3 +1,13 @@
+function showCenterToast(message, type = "success", duration = 2500) {
+    const toast = document.getElementById("centerToast");
+    toast.textContent = message;
+    toast.className = `center-toast show ${type}`;
+
+    setTimeout(() => {
+        toast.className = "center-toast";
+    }, duration);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const clearIcon = document.querySelector(".clear-icon");
@@ -111,47 +121,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     contactForm.addEventListener("submit", async e => {
-        e.preventDefault();
+    e.preventDefault();
 
-        const agentName = modalName.textContent;
-        const agency = modalAgency.textContent;
+    const agentName = modalName.textContent;
+    const agency = modalAgency.textContent;
 
-        const userName = document.getElementById("userName").value.trim();
-        const userPhone = document.getElementById("userPhone").value.trim();
-        const userEmail = document.getElementById("userEmail").value.trim();
-        const userAddress = document.getElementById("userAddress").value.trim();
+    const userName = document.getElementById("userName").value.trim();
+    const userPhone = document.getElementById("userPhone").value.trim();
+    const userEmail = document.getElementById("userEmail").value.trim();
+    const userAddress = document.getElementById("userAddress").value.trim();
 
-        if (!userName || !userPhone || !userEmail || !userAddress) {
-            return alert("Please fill in all fields.");
+    if (!userName || !userPhone || !userEmail || !userAddress) {
+        return showCenterToast("Please fill in all fields.", "error");
+    }
+
+    try {
+        const res = await fetch("http://localhost:5083/api/requests", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                agentName,
+                agency,
+                userName,
+                userPhone,
+                userEmail,
+                userAddress,
+                date: new Date().toISOString()
+            })
+        });
+
+        if (res.ok) {
+            showCenterToast("Message sent!", "success");
+            contactForm.reset();
+            modalOverlay.style.display = "none";
+        } else {
+            showCenterToast("Failed to send message.", "error");
         }
-
-        try {
-            const res = await fetch("http://localhost:5083/api/requests", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    agentName,
-                    agency,
-                    userName,
-                    userPhone,
-                    userEmail,
-                    userAddress,
-                    date: new Date().toISOString()
-                })
-            });
-
-            if (res.ok) {
-                alert("Message sent!");
-                contactForm.reset();
-                modalOverlay.style.display = "none";
-            } else {
-                alert("Failed to send message.");
-            }
-        } catch (err) {
-            console.error("Error sending message:", err);
-            alert("Error sending message.");
-        }
-    });
+    } catch (err) {
+        console.error("Error sending message:", err);
+        showCenterToast("Error sending message.", "error");
+    }
+});
 
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("navMenu");
@@ -165,3 +175,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
