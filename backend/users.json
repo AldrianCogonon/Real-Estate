@@ -10,5 +10,11 @@
     "Email": "maccogoth@gmail.com",
     "Password": "drake123",
     "Redirect": "buy.html"
+  },
+  {
+    "Username": "santi",
+    "Email": "santi@gmail.com",
+    "Password": "santi123",
+    "Redirect": "buy.html"
   }
 ]

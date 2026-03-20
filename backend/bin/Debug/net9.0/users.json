@@ -6,51 +6,9 @@
     "Redirect": "buy.html"
   },
   {
-    "Username": "zedrick",
-    "Email": "zedrickthebuilder@gmail.com",
-    "Password": "zedrick123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "zach",
-    "Email": "zachary@gmail.com",
-    "Password": "zach123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "zachboy",
-    "Email": "zachboy@gmail.com",
-    "Password": "zach123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "cogonon",
-    "Email": "cogonon@gmail.com",
-    "Password": "cogonon123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "aldrex",
-    "Email": "aldrex@gmail.com",
-    "Password": "aldrex123",
-    "Redirect": "buy.html"
-  },
-  {
     "Username": "drake",
     "Email": "maccogoth@gmail.com",
     "Password": "drake123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "dwyni",
-    "Email": "maccogoth@gmail.com",
-    "Password": "123",
-    "Redirect": "buy.html"
-  },
-  {
-    "Username": "santi",
-    "Email": "santi@gmail.com",
-    "Password": "123123123",
     "Redirect": "buy.html"
   }
 ]
