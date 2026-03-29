@@ -885,9 +885,8 @@ footer {
 .company-loc img {
   width: 250px;
   height: 200px;
+  border: 5px solid #ff7400; /* optional highlight like your image */
   margin-top: 50px;
-  border-radius: 10px;
-  box-shadow: 1px 3px 5px gray;
 }
 /* =====================
    LEGAL
@@ -983,7 +982,19 @@ footer {
 	.logo img { margin-left:20px; } .search-wrapper{ width:70%; } 
 
 }
+/* =======================
+  TABLETS
+======================== */
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+    nav.header {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slideInNav 0.8s ease forwards 0.5s;
+    }
 
+    .logo img { margin-left:20px; } .search-wrapper{ width:70%; }
+}
 /* =======================
    MOBILE 
 ======================== */
@@ -1052,6 +1063,16 @@ footer {
         background-position: top center; /* adjust focus */
     }
     /* =======================
+     PROPERTY TYPE SECTION
+    ======================== */
+    .prop-types form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 0 40px 40px;
+        justify-items: center;
+    }
+    /* =======================
       SHORT TERM SECTION
     ======================== */
 
@@ -1065,14 +1086,136 @@ footer {
         margin: 1px 0 0 7px;
     }
     /* =======================
+      INQUIRY SECTION
+    ======================== */
+
+     .inquiry {
+        background-image: none;
+        background-color: #ff7400;
+        padding: 30px 20px;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        display: flex;
+    }
+
+    .inquiry-left {
+        display: none !important;
+    }
+
+    .inquiry-right {
+        display: block !important;
+        flex: unset;
+        width: 100%;
+    }
+
+    .inquiry-form-container {
+        width: 100%;
+        height: 100%;
+        padding: 25px 20px;
+        box-shadow: none;
+    }
+    /* =======================
       FOOTER SECTION
     ======================== */
     .foot-container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
-}
-.maps:hover {
-    transform: scale(1.1);
+
+    /* Hide logo image and HAVEN text */
+    .brand {
+        display: none;
+    }
+
+    /* Socials stays but resets margin */
+    .brand-group {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .socials {
+        margin-top: 0;
+    }
+
+    /* Find Us centered */
+    .find-us {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .underline {
+        margin-left: 0;
+        align-self: center;
+    }
+
+    /* Company location full width */
+    .company-loc {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .company-loc img {
+        margin-top: 0;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    /* Legal centered */
+    .legal {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .legal h4 {
+        margin-left: 0;
+        font-size: 22px;
+    }
+    .legal a{
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    /* Footer bottom */
+    .footer-bottom {
+        padding: 16px 20px;
+        justify-content: center;
+    }
+
+    .copyright {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .socials h4 {
+        display: none;
+    }
+
+    .social-icons a {
+        font-size: 50px;
+        margin-right: 15px;
+    }
+
+    .find-us {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .find-us h4 {
+        font-size: 22px;
+    }
+
+    .find-us a {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 }
