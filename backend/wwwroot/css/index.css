@@ -885,7 +885,6 @@ footer {
 .company-loc img {
   width: 250px;
   height: 200px;
-  border: 5px solid #ff7400; /* optional highlight like your image */
   margin-top: 50px;
 }
 /* =====================
