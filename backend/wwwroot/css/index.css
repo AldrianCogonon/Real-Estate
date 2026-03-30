@@ -117,6 +117,7 @@ body{
     position: relative;
     z-index: 1;
     transition: all 0.3s ease;
+    animation: strongGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes strongGlow {
@@ -223,11 +224,12 @@ nav.header {
     }
 }
 
-/* Optional: subtle hover lift */
+/* Optional: subtle hover lift
 .logo img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
+ */
 
 /* =====================
    HERO TEXT
@@ -269,6 +271,26 @@ nav.header {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     font-weight: 100;
+}
+@keyframes pushOut {
+  0% {
+    transform: scale(0.5);   /* start small */
+    opacity: 0;              /* invisible */
+  }
+  60% {
+    transform: scale(1.1);   /* overshoot outward */
+    opacity: 1;              /* fade in */
+  }
+  100% {
+    transform: scale(1);     /* settle back to normal */
+  }
+}
+
+.btns {
+  padding: 10px 20px;
+  margin: 10px;
+  animation: pushOut 1s ease-out forwards;
+  
 }
 
 /* ==============================
@@ -430,31 +452,55 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 ========================================== */
 
 .carousel {
+    max-width: calc((270px * 4) + (24px * 3));
+    margin: 0 auto;
     overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    touch-action: pan-y; /* ← ignore horizontal swipes */
+    position: relative;
+    
 }
 
 .cards-container {
     display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
     flex-wrap: nowrap;
     gap: 24px;
-    width: max-content;
-    padding: 16px 0;
-    animation: smoothScroll 35s linear infinite;
+    width: 100%; /* ← was max-content, which broke scrolling entirely */
+      padding: 16px 10px;
     touch-action: pan-y; /* ← also on the child to be safe */
+     box-sizing: border-box; 
+      scroll-padding-left: 10px;
+    scroll-padding-right: 10px;
+}
+/* hide scrollbar */
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
+.cards-container {
+    scrollbar-width: none;
 }
 
-@keyframes smoothScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.carousel::before,
+.carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
 }
 
-.cards-container:hover {
-    animation-play-state: paused;
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #f9f9f9, transparent);
 }
 
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #f9f9f9, transparent);
+}
 /* ==========================================
    PROPERTY CARD
 ========================================== */
@@ -465,9 +511,10 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.07);
+    scroll-snap-align: start;
     /* shadow on right and bottom only */
     box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.5);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
 }
 
 .property-card:hover {
@@ -573,6 +620,59 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 
 .property-details ion-icon {
     font-size: 14px;
+}
+/* =====================
+    ARROW/SCROLL DOTS
+===================== */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: #ff7400;
+    color: #fff;
+    border: none;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 20;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.scroll-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.scroll-dots span {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.scroll-dots span.active {
+    background: #ff7400;
+    transform: scale(1.2);
 }
 /* =====================
    8. EXPLORE SECTION

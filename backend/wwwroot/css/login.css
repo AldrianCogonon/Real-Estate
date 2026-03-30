@@ -75,17 +75,13 @@ header {
     }
 }
 
-.logo img {
-    width: 50px;
-    height: auto;
-}
-
 nav.header a {
+    position: relative;       /* needed for pseudo-element */
+    padding: 5px 12px;
+    background: none;         /* remove any background on hover */
     margin-left: 20px;
     text-decoration: none;
     color: white;
-    padding: 5px 12px;
-    border-radius: 6px;
     transition: all 0.3s ease;
     animation: fadeRight 1s ease;
 }
@@ -101,8 +97,33 @@ nav.header a {
     }
 }
 
+/* Underline effect from center */
+nav.header a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;                /* start at center */
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: translateX(-50%) scaleX(0); /* hide at start */
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+/* Hover: expand underline smoothly */
+nav.header a:hover::after {
+    transform: translateX(-50%) scaleX(1); 
+}
+
+/* Active link: keep underline visible */
+nav.header a:active::after {
+    transform: translateX(-50%) scaleX(1);
+    background-color: #fff;
+}
+
+/* Optional: subtle color change on hover */
 nav.header a:hover {
-    background-color: #000;
+    color: #fff;  /* keeps text white, no background */
 }
 
 .container-wrapper {
@@ -247,7 +268,9 @@ nav.header a:hover {
 .logo img {
     width: 50px;
     height: auto;
-    margin-left: 250px;
+    /* margin-left: 250px; */
+    position: relative;
+    z-index: 1;
     animation: strongGlow 2s ease-in-out infinite alternate;
 }
 
