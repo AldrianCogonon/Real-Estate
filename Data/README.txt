@@ -1,0 +1,1 @@
+Editing the products.json updates the MarketplaceDB for conversion

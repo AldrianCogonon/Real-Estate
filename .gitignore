@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Build artifacts
 bin/
 obj/
@@ -15,3 +16,15 @@ wwwroot/lib/
 # Ignore development settings and build folders
 bin/
 obj/
+=======
+
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+*.db-shm
+*.db-wal
+node_modules/
+>>>>>>> 6b95b0ad680c1b32c300d844e0827e6a0a768832
