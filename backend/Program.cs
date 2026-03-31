@@ -29,6 +29,8 @@ builder.Services.AddRateLimiter(options =>
     });
 });
 
+VladSetup.AddVladServices(builder);
+
 var app = builder.Build();
 
 app.UseCors("FrontendOnly");
@@ -41,8 +43,9 @@ ChatRoutes.MapRoutes(app);
 RequestRoutes.MapRoutes(app);   
 PropertyRoutes.MapRoutes(app);
 
-string usersFile = Path.Combine(builder.Environment.ContentRootPath, "users.json");
+VladSetup.MapVladEndpoints(app);
 
+string usersFile = Path.Combine(builder.Environment.ContentRootPath, "users.json");
 app.MapGet("/api/users", () =>
 {
     Console.WriteLine($"PATH: {usersFile}");
