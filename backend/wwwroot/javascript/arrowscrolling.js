@@ -1,39 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.getElementById('slider');
-    const dotsContainer = document.getElementById('dots');
-    const cards = document.querySelectorAll('.property-card');
-    const cardWidth = cards[0].offsetWidth + 24; // card + gap
+    const carousel = document.getElementById("carousel");
+    const dotsContainer = document.getElementById("dots");
+
+    const cards = carousel.querySelectorAll(".property-card");
+    const visibleCards = 3;
+    const totalSlides = Math.ceil(cards.length / visibleCards);
+
+    let currentIndex = 0;
 
     // CREATE DOTS
-    cards.forEach((_, index) => {
-        const dot = document.createElement('span');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            slider.scrollTo({ left: cards[index].offsetLeft - 40, behavior: 'smooth' });
-            // subtract 40 to account for the container's left padding
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+
+        dot.addEventListener("click", () => {
+            currentIndex = i;
+            updateCarousel();
         });
+
         dotsContainer.appendChild(dot);
-    });
+    }
 
-    const dots = dotsContainer.querySelectorAll('span');
-
-    // UPDATE ACTIVE DOT
-    slider.addEventListener('scroll', () => {
-        let closestIndex = 0;
-        let closestDist = Infinity;
-        cards.forEach((card, index) => {
-            const dist = Math.abs(card.offsetLeft - 40 - slider.scrollLeft);
-            if (dist < closestDist) { closestDist = dist; closestIndex = index; }
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth + 20;
+        carousel.scrollTo({
+            left: cardWidth * visibleCards * currentIndex,
+            behavior: "smooth"
         });
-        dots.forEach(d => d.classList.remove('active'));
-        dots[closestIndex].classList.add('active');
-    });
 
-    // ARROWS
-    document.querySelector('.arrow.right').addEventListener('click', () => {
-        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    });
-    document.querySelector('.arrow.left').addEventListener('click', () => {
-        slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
+        document.querySelectorAll(".carousel-dots span")
+            .forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+    }
+
+    // BUTTON CONTROL
+    function scrollCarousel(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
+
+        updateCarousel();
+    }
 });
