@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const carousel  = document.querySelector('.discover .carousel');
-    const btnLeft   = document.querySelector('.arrow.left');
-    const btnRight  = document.querySelector('.arrow.right');
-    const cardWidth = carousel.querySelector('.property-card').offsetWidth
-                    + parseFloat(getComputedStyle(carousel).gap);
 
-    function updateButtons() {
-        btnLeft.disabled  = carousel.scrollLeft <= 0;
-        btnRight.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
-    }
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+        const carousel  = wrapper.querySelector('.carousel');
+        const btnLeft   = wrapper.querySelector('.arrow.left');
+        const btnRight  = wrapper.querySelector('.arrow.right');
 
-    btnRight.addEventListener('click', () => {
-        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        // recalculated each click in case of resize
+        const cardWidth = () => {
+            const card = carousel.querySelector('.property-card');
+            return card.offsetWidth + parseFloat(getComputedStyle(carousel).gap);
+        };
+
+        function updateButtons() {
+            btnLeft.disabled  = carousel.scrollLeft <= 0;
+            btnRight.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
+        }
+
+        btnRight.addEventListener('click', () => {
+            carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+        });
+
+        btnLeft.addEventListener('click', () => {
+            carousel.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+        });
+
+        carousel.addEventListener('scroll', updateButtons);
+        updateButtons();
     });
-
-    btnLeft.addEventListener('click', () => {
-        carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
-
-    carousel.addEventListener('scroll', updateButtons);
-    updateButtons();
 });

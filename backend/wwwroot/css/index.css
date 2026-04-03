@@ -465,9 +465,10 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-marker-group: after;
-    padding-bottom: 16px;
+    scroll-marker-group: after;   /* keeps this */
+    padding-bottom: 10px;
 }
+
 
 /* hide ugly scrollbar */
 .carousel::-webkit-scrollbar {
@@ -501,8 +502,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
    SCROLL BUTTONS
 ========================================== */
 
-.carousel::scroll-button(left),
-.carousel::scroll-button(right) {
+.carousel::scroll-button(left), .carousel::scroll-button(right) {
     position: fixed;
     position-anchor: --carousel;
     width: 60px;
@@ -530,8 +530,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 }
 
 /* disabled when nothing left to scroll */
-.carousel::scroll-button(left):disabled,
-.carousel::scroll-button(right):disabled {
+.carousel::scroll-button(left):disabled, .carousel::scroll-button(right):disabled {
     opacity: 0.3;
     cursor: auto;
 }
@@ -541,30 +540,24 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
 .carousel::scroll-marker-group {
     display: flex;
     justify-content: center;
-    gap: 0.5em;
-    margin-top: 6px;
-    padding: 6px 16px;
-    background: #f9f9f9;            /* ← matches .discover background */
-    border-radius: 20px;
-    width: fit-content;
-    margin-inline: auto;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0 6px;
+    /* sits OUTSIDE the scroll overflow — no clipping issue */
 }
-
 .property-card::scroll-marker {
     content: "";
-    width: 8px;
-    height: 8px;
-    background: #ddd;               /* ← lighter so it blends softly */
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
+    background: #aaa;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
-
 .property-card::scroll-marker:target-current {
     background: #ff7400;
-    transform: scale(1.3);
+    transform: scale(1.35);
 }
-
 /* ==========================================
    PROPERTY CARD — fix hover white gap
    and unblock shadow from dot group
