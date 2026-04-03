@@ -464,7 +464,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     gap: 1em;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+     /* scroll-behavior: smooth; to let js do it */
     padding-bottom: 10px;           /* ← removed scroll-marker-group: after */
 }
 
@@ -573,7 +573,8 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.07);
-    
+    display: flex;
+    flex-direction: column;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     margin-bottom: 4px;             /* ← reserves space so lift doesn't gap */
 }
@@ -602,6 +603,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     object-position: center;
     display: block;
     transition: transform 0.55s ease;
+   
 }
 
 .property-card:hover img {
@@ -639,6 +641,7 @@ input[type="search"]:focus { box-shadow: 0 0 0 4px rgba(0,0,0,0.15); }
     background: #ff7400;
     color: #fff;
     padding: 16px 18px 18px;
+      flex: 1;
 }
 
 .property-info h3 {
