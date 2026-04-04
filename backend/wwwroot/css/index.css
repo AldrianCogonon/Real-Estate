@@ -14,6 +14,7 @@ body, html
     width: 100%;
     max-width: 100%;
     overflow-x: clip; /* prevent horizontal scroll from any overflow */
+    overscroll-behavior-y: none; /* prevent pull-to-refresh on mobile */
 }
 
 /* =====================
@@ -1119,7 +1120,9 @@ footer {
 ======================== */
 
 @media screen and (max-width: 600px) {
-
+   body, html {
+       overscroll-behavior-y: contain;
+    }
     /* =======================
     HAMBURGER
     ======================== */
@@ -1203,6 +1206,7 @@ footer {
 
     .short-header {
         margin-left: -180px; /* shift left to compensate for padding */
+        margin-top: -40px; /* reduce top margin for better spacing on mobile */
         font-size: 11px;
         
     }
