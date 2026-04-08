@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GXeXnh8fp2xk4eNpIq8voV68ewK65BE9VXVcOIfgBlM=",
+  "Hash": "HQ2f6az2O1IYuXULjW+HVdCl6glTpsbieovGJQZXOu4=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -59,12 +59,12 @@
       "OriginalItemSpec": "/home/archlinux/Downloads/Project/real-estate-project/backend/wwwroot/index.html"
     },
     {
-      "Identity": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-c2rndcmxgf.gz",
+      "Identity": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-ao5qd3r8nm.gz",
       "SourceId": "backend",
       "SourceType": "Discovered",
       "ContentRoot": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/backend",
-      "RelativePath": "admin#[.{fingerprint=c2rndcmxgf}]?.html.gz",
+      "RelativePath": "admin#[.{fingerprint=ao5qd3r8nm}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -73,8 +73,8 @@
       "RelatedAsset": "/home/archlinux/Downloads/Project/real-estate-project/backend/wwwroot/admin.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "dj2h9lv4ze",
-      "Integrity": "58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg=",
+      "Fingerprint": "mhe24b5aug",
+      "Integrity": "2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/archlinux/Downloads/Project/real-estate-project/backend/wwwroot/admin.html"
@@ -787,8 +787,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2rndcmxgf",
-      "Integrity": "PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA=",
+      "Fingerprint": "ao5qd3r8nm",
+      "Integrity": "xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/admin.html"
@@ -2602,13 +2602,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "admin.c2rndcmxgf.html",
-      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-c2rndcmxgf.gz",
+      "Route": "admin.ao5qd3r8nm.html",
+      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-ao5qd3r8nm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000904977376"
+          "Quality": "0.000905797101"
         }
       ],
       "ResponseHeaders": [
@@ -2618,15 +2618,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1104"
+          "Value": "1103"
         },
         {
           "Name": "ETag",
-          "Value": "\"58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg=\""
+          "Value": "\"2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2646,13 +2646,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA=\""
+          "Value": "W/\"xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2rndcmxgf"
+          "Value": "ao5qd3r8nm"
         },
         {
           "Name": "label",
@@ -2660,12 +2660,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA="
+          "Value": "sha256-xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4="
         }
       ]
     },
     {
-      "Route": "admin.c2rndcmxgf.html",
+      "Route": "admin.ao5qd3r8nm.html",
       "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/wwwroot/admin.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2675,7 +2675,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3940"
+          "Value": "3939"
         },
         {
           "Name": "Content-Type",
@@ -2683,11 +2683,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA=\""
+          "Value": "\"xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2697,7 +2697,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2rndcmxgf"
+          "Value": "ao5qd3r8nm"
         },
         {
           "Name": "label",
@@ -2705,13 +2705,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA="
+          "Value": "sha256-xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4="
         }
       ]
     },
     {
-      "Route": "admin.c2rndcmxgf.html.gz",
-      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-c2rndcmxgf.gz",
+      "Route": "admin.ao5qd3r8nm.html.gz",
+      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-ao5qd3r8nm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2720,7 +2720,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1104"
+          "Value": "1103"
         },
         {
           "Name": "Content-Type",
@@ -2728,11 +2728,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg=\""
+          "Value": "\"2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2750,7 +2750,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2rndcmxgf"
+          "Value": "ao5qd3r8nm"
         },
         {
           "Name": "label",
@@ -2758,18 +2758,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg="
+          "Value": "sha256-2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw="
         }
       ]
     },
     {
       "Route": "admin.html",
-      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-c2rndcmxgf.gz",
+      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-ao5qd3r8nm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000904977376"
+          "Quality": "0.000905797101"
         }
       ],
       "ResponseHeaders": [
@@ -2779,15 +2779,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1104"
+          "Value": "1103"
         },
         {
           "Name": "ETag",
-          "Value": "\"58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg=\""
+          "Value": "\"2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2807,13 +2807,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA=\""
+          "Value": "W/\"xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA="
+          "Value": "sha256-xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4="
         }
       ]
     },
@@ -2828,7 +2828,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3940"
+          "Value": "3939"
         },
         {
           "Name": "Content-Type",
@@ -2836,11 +2836,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA=\""
+          "Value": "\"xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2850,13 +2850,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-PJrE8GKj+qu7L93xObkZ9IXNlGdQXIp8ZHN8irDrROA="
+          "Value": "sha256-xpcYiA3mq0nYwHcNQRwBwb+Cs2P1Z+BFw8rp21mdPH4="
         }
       ]
     },
     {
       "Route": "admin.html.gz",
-      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-c2rndcmxgf.gz",
+      "AssetFile": "/home/archlinux/Downloads/Project/real-estate-project/backend/obj/Debug/net9.0/compressed/1fd8r68wur-ao5qd3r8nm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2865,7 +2865,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1104"
+          "Value": "1103"
         },
         {
           "Name": "Content-Type",
@@ -2873,11 +2873,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg=\""
+          "Value": "\"2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2895,7 +2895,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-58t2H9XjmfKsD4RIHzhK0PvxpOCjc/yLaaikihEDacg="
+          "Value": "sha256-2hVFszY5IYQ8kwBf4rS9D2s/6LQsVOr2iTXHov/LDbw="
         }
       ]
     },
@@ -13066,7 +13066,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13119,7 +13119,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13156,7 +13156,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13203,7 +13203,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13264,7 +13264,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13309,7 +13309,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 08 Apr 2026 21:14:15 GMT"
+          "Value": "Wed, 08 Apr 2026 21:29:17 GMT"
         },
         {
           "Name": "Cache-Control",
