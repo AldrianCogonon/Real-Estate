@@ -8,11 +8,17 @@ html
 body, html
 {
 	margin: 0; padding: 0; font-family: sans-serif; 
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip; /* prevent horizontal scroll from any overflow */
+    overscroll-behavior-y: none; /* prevent pull-to-refresh on mobile */
 }
 
+/* =====================
+   HAMBURGER – GLOBAL STYLES
+====================== */
 .hamburger {
-    display: none; 
+    display: none; /* hidden on desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -46,6 +52,9 @@ body, html
     display: none;
 }
 
+/* =========================
+   2. HERO WRAPPER
+========================= */
 .hero-wrapper{
     min-height: 100vh;
     width: 100%;
@@ -74,6 +83,9 @@ body, html
     to{ transform: scale(1); }
 }
 
+/* =========================
+   3. HEADER & NAVIGATION
+========================= */
 .hero-header {
     display: flex;
     justify-content: space-between;
@@ -302,13 +314,13 @@ nav.header {
 .contact:active {
     transform: translateY(2px);
 }
-
+ /* -----DISCOVER SECTION ----- */
 .discover {
     background: #f9f9f9;
     color: #111;
-    padding: 40px 0 30px 0; 
-    overflow: hidden;
-    position: relative;
+     padding: 40px 40px 30px 40px;  /* ← gives arrows breathing room */
+    /* overflow: hidden;
+    position: relative; */
 }
 
 .discover header {
@@ -316,7 +328,7 @@ nav.header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 24px; 
+    margin-bottom: 24px; /* reduced from 40px */
 }
 
 .discover h1 {
@@ -341,50 +353,58 @@ nav.header {
     font-size: 15px;
 }
 
+.carousel-wrapper {
+    position: relative;
+    max-width: calc(3 * 20em + 2 * 1em);   /* ← 3 cards + 2 gaps */
+    margin: 0 auto;
+    
+}
+
 .carousel {
-    overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    touch-action: pan-y; 
-}
-
-.cards-container {
+    width: 100%;
+    width: max-content; /* shrink to fit cards */
     display: flex;
-    flex-wrap: nowrap;
-    gap: 24px;
-    width: max-content;
-    padding: 16px 0;
-    animation: smoothScroll 35s linear infinite;
-    touch-action: pan-y; 
+    overflow: hidden;
+    padding-bottom: 10px; /* ← gives shadow room to expand without being cut off */
+    animation: autoScroll 18s linear infinite;
 }
 
-@keyframes smoothScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.carousel:hover {
+    animation-play-state: paused; /* pause on hover for better UX */
 }
 
-.cards-container:hover {
-    animation-play-state: paused;
+@keyframes autoScroll {
+    to { transform: translateX(var(--scroll-dist)); }
 }
 
 .property-card {
-    flex: 0 0 270px;
+    flex: 0 0 20em;
+    flex-shrink: 0; /* prevent seam mismatch when carousel loops back again */
+    margin-right: 1em; /* consistent gap between cards */
+    scroll-snap-align: start;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.5);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 4px;             /* ← reserves space so lift doesn't gap */
 }
 
 .property-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-2px);
     box-shadow: 10px 18px 36px rgba(0, 0, 0, 0.4);
+}
+.property-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 10px 5px 86px rgba(0, 0, 0, 0.4);
 }
 
 .image-wrapper {
     position: relative;
     overflow: hidden;
+     flex-shrink: 0;   /* prevents image area from compressing */
 }
 
 .property-card img {
@@ -394,6 +414,7 @@ nav.header {
     object-position: center;
     display: block;
     transition: transform 0.55s ease;
+   
 }
 
 .property-card:hover img {
@@ -426,6 +447,7 @@ nav.header {
     background: #ff7400;
     color: #fff;
     padding: 16px 18px 18px;
+    flex: 1 0 auto;   /* ← change from just flex: 1 to flex: 1 0 auto */
 }
 
 .property-info h3 {
@@ -554,6 +576,14 @@ nav.header {
     height: 1px;
     background-color: black;
     margin: -16px 0 70px -70px;
+}
+
+@keyframes autoScrollReverse {
+    from { transform: translateX(var(--scroll-dist)); }
+    to   { transform: translateX(0); }
+}
+.carousel.reverse {
+    animation-name: autoScrollReverse;
 }
 
 .inquiry {
@@ -819,7 +849,7 @@ footer {
         animation: slideInNav 0.8s ease forwards 0.5s;
     }
 
-	.logo img { margin-left:20px; } .search-wrapper{ width:70%; } 
+	.logo img { margin-left:20px; }
 
 }
 
@@ -846,7 +876,7 @@ footer {
     .logo img { margin-left:20px; } .search-wrapper{ width:70%; }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
 
     .hamburger {
         display: flex;
@@ -868,7 +898,6 @@ footer {
         width: 260px;
         height: 100vh;
         background: black;
-
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -912,15 +941,26 @@ footer {
         justify-items: center;
     }
 
+   .short {
+        min-height: unset;    /* allow content to determine height */
+        padding-bottom: 40px; /* add some breathing room at the bottom */
+        padding-left: 40px; /* add horizontal padding for better readability */
+        padding-right: 40px;
+    }
+
     .short-header {
-        margin-left: -150px;
-        font-size: 12px;
+        margin-left: -180px; /* shift left to compensate for padding */
+        margin-top: -40px; /* reduce top margin for better spacing on mobile */
+        font-size: 11px;
+        
     }
     
-    .short-header .custom-line{
-        width: 300px;
-        margin: 1px 0 0 7px;
+    .custom-line {
+        width: 60%;
+        margin: -16px 0 40px 0;
     }
+
+    .property-card { flex: 0 0 80vw; }
 
      .inquiry {
         background-image: none;

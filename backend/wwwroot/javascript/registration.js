@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.getElementById("nav-menu");
 
     hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
+        hamburger.classList.toggle("open");
+        navMenu.classList.toggle("active"); 
     });
 
     const form = document.getElementById("registerForm");

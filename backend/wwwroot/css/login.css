@@ -81,7 +81,8 @@ header {
 }
 
 nav.header a {
-    margin-left: 20px;
+    position: relative;
+    background: none;
     text-decoration: none;
     color: white;
     padding: 5px 12px;
@@ -101,8 +102,30 @@ nav.header a {
     }
 }
 
+nav.header a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;                /* start at center */
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: translateX(-50%) scaleX(0); /* hide at start */
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+nav.header a:hover::after {
+    transform: translateX(-50%) scaleX(1); 
+}
+
+nav.header a:active::after {
+    transform: translateX(-50%) scaleX(1);
+    background-color: #fff;
+}
+
 nav.header a:hover {
-    background-color: #000;
+    color: #fff;  /* keeps text white, no background */
 }
 
 .container-wrapper {
@@ -245,9 +268,8 @@ nav.header a:hover {
 }
 
 .logo img {
-    width: 50px;
+    width: 75px;
     height: auto;
-    margin-left: 250px;
     animation: strongGlow 2s ease-in-out infinite alternate;
 }
 
@@ -283,6 +305,7 @@ nav.header a:hover {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 22px;
 }
 
 #message {
@@ -350,19 +373,39 @@ nav.header a:hover {
     transform:translateX(20px);
 }
 
-.hamburger{
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-    gap:5px;
+.hamburger {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 9999;
 }
 
-.hamburger span{
-    width:25px;
-    height:3px;
-    background:white;
-    display:block;
-    border-radius:3px;
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(58deg) translate(5px,5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-58deg) translate(5px,-5px);
+}
+ nav.header a ion-icon {
+    display: none;
 }
 
 @media (max-width: 768px){
@@ -385,30 +428,50 @@ header{
     margin-left:0;
 }
 
-.hamburger{
-    display:flex;
+.hamburger {
+    display: flex;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    z-index: 3000;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
 }
 
 nav.header{
-    position:absolute;
-    top:80px;
-    right:0;
-    background:rgba(0,0,0,0.95);
-    width:200px;
-    flex-direction:column;
-    display:none;
-    padding:20px;
-    border-radius:8px;
-    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    transition: right 0.25s ease;
+    z-index: 2500;
 }
 
 nav.header a{
-    margin:10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-align: center;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    width: 100%;
+    justify-content: center;
 }
 
-nav.header.active{
-    display:flex;
+nav.header.active {
+    right: 0;
 }
 
 .container{

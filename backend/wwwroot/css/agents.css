@@ -64,9 +64,8 @@ header {
 }
 
 .logo img {
-    width: 50px;
+    width: 75px;
     height: auto;
-    margin-left: 250px;
     position: relative;
     z-index: 1;
     transition: all 0.3s ease;
@@ -107,6 +106,7 @@ header {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 22px;
 }
 
 nav.header {
@@ -129,17 +129,33 @@ nav.header a {
     transition: all 0.3s ease;
     padding: 5px 12px;
     border-radius: 6px;
+    position: relative;
+}
+
+nav.header a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;                /* start at center */
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: translateX(-50%) scaleX(0); /* hide at start */
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+nav.header a:hover::after {
+    transform: translateX(-50%) scaleX(1); 
+}
+
+nav.header a:active::after {
+    transform: translateX(-50%) scaleX(1);
+    background-color: #fff;
 }
 
 nav.header a:hover {
-    background-color: #000;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-nav.header a:active {
-    background-color: #222;
-    transform: translateY(1px);
+    color: #fff;  /* keeps text white, no background */
 }
 
 @media screen and (max-width: 1100px) {
