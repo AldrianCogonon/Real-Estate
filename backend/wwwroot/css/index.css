@@ -248,7 +248,26 @@ nav.header {
     position: relative;
     font-weight: 100;
 }
+@keyframes pushOut {
+  0% {
+    transform: scale(0.5);   /* start small */
+    opacity: 0;              /* invisible */
+  }
+  60% {
+    transform: scale(1.1);   /* overshoot outward */
+    opacity: 1;              /* fade in */
+  }
+  100% {
+    transform: scale(1);     /* settle back to normal */
+  }
+}
 
+.btns {
+  padding: 10px 20px;
+  margin: 10px;
+  animation: pushOut 1s ease-out forwards;
+  
+}
 .login {
     border: none;
     color: white;
@@ -933,6 +952,7 @@ footer {
         background-size: auto 100%;
         background-position: top center;
     }
+
     .prop-types form {
         display: grid;
         grid-template-columns: 1fr 1fr;
